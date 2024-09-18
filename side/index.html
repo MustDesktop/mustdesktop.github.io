@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!--  -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=pmhiZG"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=pmhiZG" type="text/css">
+  <title>Time Table</title>
+  <!-- Linking Google Font Link For Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="side/style.css" />
+  
+  
+  
+</head>
+<body>
+  
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="side/Must Dsk.png" alt="logo" />
+      <h2>Must Desktop</h2>
+    </div>
+    <ul class="sidebar-links">
+      <h4>
+        <span>Main Menu</span>
+        <div class="menu-separator"></div>
+      </h4>
+      <li>
+      <a href="../index.html">
+        <span class="material-symbols-outlined"> Home </span>Home</a>
+    </li>
+      <li>
+        <a href="../side.html">
+          <span class="material-symbols-outlined"> Dashboard </span>Time Table</a>
+      </li>
+    </li>
+    <li>
+      <a href="../bus.html"><span class="material-symbols-outlined"> folder </span>Courses</a>
+    </li>
+      <li>
+        <a href="../calc.html"><span class="material-symbols-outlined"> calculate </span>GPA Calculator</a>
+      </li>
+      <li>
+        <a href="serv.html">
+          <span class="material-symbols-outlined"> Dns </span>Services</a>
+      </li>
+      <!-- Other Sidebar Links -->
+      <h4>
+        <span>Account</span>
+        <div class="menu-separator"></div>
+      </h4>
+      <li>
+        <a href="profile.html"><span class="material-symbols-outlined"> account_circle </span>Profile</a>
+      </li>
+      <!--<li>
+        <a href="settings.html"><span class="material-symbols-outlined"> settings </span>Settings</a>
+      </li>-->
+      <!--<li>
+        <a href="#"><span class="material-symbols-outlined"> logout </span>Logout</a>
+      </li> -->
+    </ul>
+    <div class="user-account">
+      <div class="user-profile">
+        <a href="profile.html" style="color: black;">
+          <img id="sidebarProfilePic" src="side/account_circle_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Profile Picture" class="circular-image"/>      
+        <div class="user-detail">
+          <h3 id="sidebarProfileName"></h3>
+          <span id="sidebarAbout"></span>
+        </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <section data-bs-version="5.1" class="article07 cid-ukYDfR3vEw" id="article07-2">
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card col-md-12 col-lg-10">
+        <div class="card-wrapper">
+          <main>
+            <section id="table-form">
+              <h2>Create Time Table</h2>
+              <form id="schedule-form">
+                <label for="table-name">Name:</label>
+                <input type="text" id="table-name" required>
+                
+                <label for="day">Day:</label>
+                <select id="day" required>
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                  <option value="Sunday">Sunday</option>
+                </select>
+                
+                <label for="crn">CRN:</label>
+                <input type="text" id="crn" required>
+                
+                <label for="start-time">Start Time:</label>
+                <input type="time" id="start-time" required>
+                
+                <label for="end-time">End Time:</label>
+                <input type="time" id="end-time" required>
+                
+                <button type="button" id="save-button">Save Table</button>
+              </form>
+            </section>
+            
+            <section id="table-display">
+              <h2>Saved Time Tables</h2>
+              <table id="time-table-list">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Day</th>
+                    <th>CRN</th>
+                    <th>Time</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Time table entries will be added here -->
+                </tbody>
+              </table>
+              <button id="export-excel">Export as Excel</button>
+              <button id="export-image">Export as Image</button>
+            </section>
+          </main>
+          <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2"></h3>
+          <div class="row card-box align-left">
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                <h4 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5"></h4>
+                
+              </div>
+            </div>
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                <h4 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5"></h4>
+                
+              </div>
+            </div>
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                <h4 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5"></h4>
+                
+              </div>
+            </div>
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                <h4 class="mbr-section-subtitle mbr-fonts-style mb-3 display-5"></h4>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="side/logic.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Load saved profile from localStorage
+      const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+    
+      if (savedProfile) {
+        // Update the sidebar with profile data
+        const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+        const sidebarProfileName = document.getElementById('sidebarProfileName');
+        const sidebarAbout = document.getElementById('sidebarAbout');
+    
+        if (savedProfile.profilePic) {
+          sidebarProfilePic.src = savedProfile.profilePic;
+          sidebarProfilePic.classList.remove('hidden');
+        } else {
+          sidebarProfilePic.classList.add('hidden');
+        }
+    
+        sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+        sidebarAbout.textContent = savedProfile.about || 'No About Information';
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Apply the saved colors on page load
+      const savedSidebarColor = localStorage.getItem('sidebarColor');
+      const savedTextColor = localStorage.getItem('textColor');
+      const savedLinkHoverColor = localStorage.getItem('linkHoverColor');
+      const savedAccentColor = localStorage.getItem('accentColor');
+
+      if (savedSidebarColor) {
+        document.documentElement.style.setProperty('--sidebar-background-color', savedSidebarColor);
+      }
+      if (savedTextColor) {
+        document.documentElement.style.setProperty('--sidebar-text-color', savedTextColor);
+      }
+      if (savedLinkHoverColor) {
+        document.documentElement.style.setProperty('--sidebar-link-hover-color', savedLinkHoverColor);
+      }
+      if (savedAccentColor) {
+        document.documentElement.style.setProperty('--sidebar-accent-color', savedAccentColor);
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="side/logic.js"></script>
+</body>
+</html>

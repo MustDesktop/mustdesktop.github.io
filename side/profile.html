@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+<title>account setting or edit profile - Bootdey.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+<style type="text/css">
+    	body {
+    margin: 0;
+    padding-top: 40px;
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+:root {
+  --card-background: #ffffff; /* Light mode card background */
+  --card-border-color: #ffffff; /* Light mode card border color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-background: #2b2b2b; /* Dark mode card background */
+    --card-border-color: #2c2c2c; /* Dark mode card border color */
+  }
+}
+
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+    
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card {
+  background: var(--card-background);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--card-border-color);
+  margin-bottom: 1rem;
+}
+
+/* Style the About textarea */
+#aboutInput {
+  width: 100%; /* Make the textarea full-width */
+  height: 100px; /* Set a fixed height */
+  padding: 10px; /* Add some padding for better readability */
+  font-size: 16px; /* Increase the font size for better readability */
+  font-family: 'Arial', sans-serif; /* Set a clean font */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  resize: vertical; /* Allow the textarea to be resized vertically */
+}
+
+/* Change the border color on focus */
+#aboutInput:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove the default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+}
+
+/* Style the label for the About input */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+   /* Darker text color */
+}
+    .circular-image {
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+    }
+    .hidden {
+      display: none;
+    }
+    
+      :root {
+        --background: rgb(233, 233, 233);
+        --color: #000000;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--color);
+      }
+
+      .darko {
+        --background: #000000;
+        --color: rgb(233, 233, 233);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #000000;
+          --color: rgb(233, 233, 233);
+        }
+      }
+
+      .light {
+        --background: rgb(233, 233, 233);
+        --color: #000000;
+      }
+
+    </style>
+</head>
+<body>
+<div class="container">
+<div class="row gutters">
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+<div class="card-body">
+<div class="account-settings">
+<div class="user-profile">
+<div class="user-avatar">
+<img id="preview" src="#" alt="Profile Picture Preview" class="circular-image hidden">
+</div>
+<h5 id="displayName"></h5>
+</div>
+<div class="about">
+<h5>About</h5>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+<div class="card-body">
+<div class="row gutters">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<h5 class="mb-2 text-primary">User Profile</h5>
+</div>
+<div class="container">
+    <form id="profileForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="aboutInput">About:</label> <!-- Added label for About section -->
+        <textarea id="aboutInput" name="aboutInput" placeholder="Enter your about text here..."></textarea> <!-- Added textarea for About input -->
+      </div>
+      <div class="form-group">
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*" class="Visible">
+        
+        
+      </div>
+
+    </form>
+  </div>
+</div>
+</div>
+</div>
+<div class="row gutters">
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="text-right">
+<!--<button type="button" id="deletePic" class="btn btn-danger hidden">Delete Photo</button>-->
+<button type="submit" class="btn btn-primary">Save Profile</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+	
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const profileForm = document.getElementById('profileForm');
+  const profilePicInput = document.getElementById('profilePic');
+  const preview = document.getElementById('preview');
+  const deletePic = document.getElementById('deletePic');
+  const displayName = document.getElementById('displayName');
+  const saveButton = document.querySelector('.btn.btn-primary'); // Select the save button
+  const aboutText = document.querySelector('.about p');
+  const aboutInput = document.getElementById('aboutInput'); // New About input
+
+  // Handle image preview
+  profilePicInput.addEventListener('change', function (e) {
+    const file = e.target.files[0];
+    if (file && (file.type === 'image/jpeg' || file.type === 'image/png')) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        preview.src = e.target.result;
+        preview.classList.remove('hidden');
+        deletePic.classList.remove('hidden');
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert('Please select a valid image file (JPG or PNG).');
+      profilePicInput.value = '';
+    }
+  });
+
+  // Handle form submission when the Save button is clicked
+  saveButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const aboutContent = aboutInput.value; // Capture About input
+    const profilePic = preview.src !== '#' ? preview.src : '';
+
+    const userProfile = {
+      name: name,
+      about: aboutContent, // Save About content
+      profilePic: profilePic
+    };
+
+    localStorage.setItem('userProfile', JSON.stringify(userProfile));
+    alert('Profile saved!');
+    window.location.href = 'side.html'; // Redirect to main page after saving
+  });
+
+  // Load saved profile
+  const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+  if (savedProfile) {
+    document.getElementById('name').value = savedProfile.name;
+    aboutInput.value = savedProfile.about || ''; // Load saved About text
+    aboutText.textContent = savedProfile.about || ''; // Display saved About text
+    displayName.textContent = savedProfile.name; // Set h5 text to name
+    if (savedProfile.profilePic) {
+      preview.src = savedProfile.profilePic;
+      preview.classList.remove('hidden');
+      deletePic.classList.remove('hidden');
+    }
+  }
+
+  // Handle delete profile picture
+  deletePic.addEventListener('click', function () {
+    preview.src = '#';
+    preview.classList.add('hidden');
+    deletePic.classList.add('hidden');
+    profilePicInput.value = ''; // Clear the file input
+  });
+
+  // Allow editing profile picture by clicking on the image
+  preview.addEventListener('click', function () {
+    profilePicInput.click();
+  });
+});
+
+
+  </script>
+
+  
+</body>
+</html>
