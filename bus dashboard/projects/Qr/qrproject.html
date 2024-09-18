@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Qr Project</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../../css/style.css">
+   <link rel="stylesheet" href="qr asset/styles.css">
+   <style>
+      :root{
+   --main-color:#0059ff;
+   --red:#e74c3c;
+   --orange:#f39c12;
+   --light-color:#000000;
+   --light-bg:#eee;
+   --black:#000000;
+   --white:#fff;
+   --border:.1rem solid rgba(0,0,0,.2);
+}
+   </style>
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <div class="typewriter">
+         <h1 style="font-size: large;">Code</h1>
+      <h1 style="font-size: x-large;">craft</h1>
+       </div>
+<section></section>
+     <!-- <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form> -->
+
+      <div class="icons">
+         <a href="../../calc/calc.html"> <div id="" class="fa-solid fa-calculator"></div> </a>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="Profile Picture" id="sidebarProfilePic">
+         <h3 class="name" id="sidebarProfileName">must Desktop</h3>
+         <p class="role" id="sidebarAbout">studen</p>
+         <a href="profile.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/default.jpg" id="profilePic" class="image" alt="Profile Picture">
+      <h3 class="name" id="profileName">Default Name</h3>
+      <p class="profileAbout" id="sidebarAbout"></p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="../../home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="../../courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+      <a href="../../about.html"><i class="fas fa-question"></i><span>About</span></a>
+      <a href="../../projects.html"><i class="fas fa-chalkboard-user"></i><span>Projects</span></a>
+     <!-- <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a> -->
+   </nav>
+</div>
+
+<section class="watch-video">
+
+   <div class="video-container">
+     <!-- <div class="video">
+         <video src="images/vid-1.mp4" controls poster="images/post-1-1.png" id="video"></video>
+      </div> -->
+      
+      <h3 class="title">Qr code Generator</h3>
+      <div class="info">
+        <!-- <p class="date"><i class="fas fa-calendar"></i><span>.</span></p>
+         <p class="date"><i class="fas fa-heart"></i><span> .</span></p>  -->
+      </div>
+      <div class="tutor">
+         <img src="../../images/Must Dsk.png" alt="">
+         <div>
+            <h3>Must Desktop</h3>
+            <span>developer</span>
+         </div>
+      </div>
+      <h1 style="color: var(--black);">Try QR Code Generator</h1>
+      <input type="text" id="qr-input" placeholder="Enter text for QR code">
+      <button id="generate-btn" style="font-size: medium;">Generate QR Code</button>
+      <button id="download-btn" style="display: none;">Download QR Code</button>
+      <div id="qr-code" class="qr-code"></div>
+  
+      <form action="" method="post" class="flex">
+         <a href="Qr Generator.rar" class="inline-btn">Download</a>
+        <!-- <button><i class="far fa-heart"></i><span>like</span></button> -->
+      </form>
+    <!--  <p class="description">
+.
+   </p> -->
+   </div>
+
+</section>
+
+<section class="comments">
+
+   <h1 class="heading">Code Example</h1>
+
+   <form action="" class="add-comment">
+      <h3>Code Example</h3>
+    <!--  <textarea name="comment_box" placeholder="enter your comment"  cols="30" rows="10"></textarea> -->
+    <p class="codepen" data-height="300" data-default-tab="html" data-slug-hash="VwJOgxO" data-pen-title="Untitled" data-user="VIRUS-X" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/VIRUS-X/pen/VwJOgxO">
+      Untitled</a> by VIRUS X (<a href="https://codepen.io/VIRUS-X">@VIRUS-X</a>)
+      on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <!--  <input type="submit" value="add comment" class="inline-btn" name="add_comment"> -->
+   </form>
+
+   <!--<h1 class="heading">user comments</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="user">
+            <img src="images/pic-1.jpg" alt="">
+            <div>
+               <h3>must Desktop</h3>
+               <span>22-10-2022</span>
+            </div>
+         </div>
+         <div class="comment-box">this is a comment form must Desktop</div>
+         <form action="" class="flex-btn">
+            <input type="submit" value="edit comment" name="edit_comment" class="inline-option-btn">
+            <input type="submit" value="delete comment" name="delete_comment" class="inline-delete-btn">
+         </form>
+      </div>
+
+      <div class="box">
+         <div class="user">
+            <img src="images/pic-2.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <span>22-10-2022</span>
+            </div>
+         </div>
+         <div class="comment-box">awesome tutorial!
+            keep going!</div>
+      </div>
+
+      <div class="box">
+         <div class="user">
+            <img src="images/pic-3.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <span>22-10-2022</span>
+            </div>
+         </div>
+         <div class="comment-box">amazing way of teaching!
+            thank you so much!
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="user">
+            <img src="images/pic-4.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <span>22-10-2022</span>
+            </div>
+         </div>
+         <div class="comment-box">loved it, thanks for the tutorial!</div>
+      </div>
+
+      <div class="box">
+         <div class="user">
+            <img src="images/pic-5.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <span>22-10-2022</span>
+            </div>
+         </div>
+         <div class="comment-box">this is what I have been looking for! thank you so much!</div>
+      </div>
+
+      <div class="box">
+         <div class="user">
+            <img src="images/pic-2.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <span>22-10-2022</span>
+            </div>
+         </div>
+         <div class="comment-box">thanks for the tutorial!
+
+            how to download source code file?
+         </div>
+      </div> -->
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>Virus X</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../../js/script.js"></script>
+<script src="qr asset/script.js"></script>
+<script src="qr asset/jquery.min.js"></script>
+<script src="qr asset/jquery.qrcode.min.js"></script>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+       if (savedProfile) {
+           // Update the profile section with profile data
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+
+           // Update the profile picture
+           if (savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+
+           // Update the name and about section
+           sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+       }
+   });
+</script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+   
+       if (savedProfile) {
+           // Update the profile section in the sidebar
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+   
+           if (sidebarProfilePic && savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+   
+           if (sidebarProfileName) {
+               sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           }
+   
+           if (sidebarAbout) {
+               sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+           }
+   
+           // Update the main profile section
+           const profilePic = document.getElementById('profilePic');
+           const profileName = document.getElementById('profileName');
+           const profileRole = document.getElementById('profileRole');
+           const profileAbout = document.getElementById('profileAbout');
+   
+           if (profilePic && savedProfile.profilePic) {
+               profilePic.src = savedProfile.profilePic;
+           }
+   
+           if (profileName) {
+               profileName.textContent = savedProfile.name || 'No Name Provided';
+           }
+   
+           if (profileRole) {
+               profileRole.textContent = savedProfile.role || 'Student';
+           }
+   
+           if (profileAbout) {
+               profileAbout.textContent = savedProfile.about || 'No About Information Provided';
+           }
+       }
+   });
+   
+   
+   </script>
+</body>
+</html>

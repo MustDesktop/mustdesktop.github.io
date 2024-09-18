@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="images/Must Dsk.png" type="image/x-icon">
+   <title>Acc</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../css/style.css">
+
+   <style>
+     
+     :root{
+   --main-color:#ffd900;
+   --red:#e74c3c;
+   --orange:#f39c12;
+   --light-color:#000000;
+   --light-bg:#eee;
+   --black:#000000;
+   --white:#fff;
+   --border:.1rem solid rgba(0,0,0,.2);
+}
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+
+      .navigation-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 20px;
+      }
+
+      .navigation-buttons button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          background-color: var(--main-color);
+          color: #fff;
+          cursor: pointer;
+      }
+
+      .navigation-buttons button.active {
+          background-color: var(--main-color);
+      }
+
+      .view-selector {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+      }
+
+      .view-selector button {
+          padding: 10px 20px;
+          margin: 0 5px;
+          border: none;
+          border-radius: 5px;
+          background-color: var(--main-color);
+          color: #fff;
+          cursor: pointer;
+      }
+
+      .view-selector button.active {
+          background-color: var(--main-color);
+      }
+
+      .file-list, .file-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          max-width: 800px;
+          margin: 0 auto;
+      }
+
+      .file-grid {
+          flex-direction: row;
+          flex-wrap: wrap;
+      }
+
+      .file-item {
+          background-color: var(--white);
+          padding: 15px;
+          border-radius: 5px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          text-align: center;
+      }
+
+      .file-item a {
+          text-decoration: none;
+          color: var(--main-color);
+          font-size: 16px;
+          display: block;
+      }
+
+      .file-item a:hover {
+          text-decoration: underline;
+      }
+  </style>
+</head>
+<body>
+
+<header class="header">
+   
+    <section class="flex">
+        <a href="../home.html" class="logo" style="font-weight: 1000;" >Must</a> 
+        <a href="../home.html"><img class="rounded-image" src="../images/Must Dsk.png" alt="msd" > </a> 
+        <a href="../home.html" class="logo" style="font-weight: 1000;" >Desktop</a>
+        <a href="../home.html" class="logo"  style="font-size: x-small;" >_Beta</a>  
+        <section></section>
+     <!--- <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form> -->
+      <div class="icons">
+        <a href="../calc/calc.html"> <div id="" class="fa-solid fa-calculator"></div> </a>
+          <div id="user-btn" class="fas fa-user"></div>
+          <div id="toggle-btn" class="fas fa-sun"></div>
+          <div id="menu-btn" class="fas fa-bars"></div>
+       </div>
+
+      <div class="profile">
+        <img src="images/pic-1.jpg" class="image" alt="Profile Picture" id="sidebarProfilePic">
+        <h3 class="name" id="sidebarProfileName">must Desktop</h3>
+        <p class="role" id="sidebarAbout">studen</p>
+        <a href="../profile.html" class="btn">View Profile</a>
+        <div class="flex-btn">
+
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+    <img src="images/default.jpg" id="profilePic" class="image" alt="Profile Picture">
+    <h3 class="name" id="profileName">Default Name</h3>
+    <p class="profileAbout" id="sidebarAbout"></p>
+    <a href="../profile.html" class="btn">View Profile</a>
+ </div>
+
+ <nav class="navbar">
+    <a href="../home.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="../courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+    <a href="../about.html"><i class="fas fa-question"></i><span>About</span></a>
+    <a href="../projects.html"><i class="fas fa-chalkboard-user"></i><span>Projects</span></a>
+   <!-- <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a> -->
+ </nav>
+
+</div>
+
+<section class="teacher-profile">
+
+   <div class="navigation-buttons">
+      <button style="font-weight: 1000;" id="homeButton">Home</button>
+      <a href="https://drive.google.com/drive/folders/1IMEMgfVS4r5BZD9Uy0rA-bdOwi12XQsd?usp=sharing"> <button style="font-weight: 1000;" id="">Gdrive</button></a>
+
+  </div>
+  <div class="view-selector">
+      <button style="font-weight: 1000;" id="listView" class="active">List View</button>
+      <button style="font-weight: 1000;" id="gridView">Grid View</button>
+  </div>
+  <div id="fileContainer" class="file-list">
+        <!-- File Links will be dynamically added here -->
+    </div>
+  <!-- <h1 class="heading">profile details</h1>
+
+   <div class="details">
+      <div class="tutor">
+         <img src="images/pic-2.jpg" alt="">
+         <h3>john deo</h3>
+         <span>developer</span>
+      </div>
+      <div class="flex">
+         <p>total playlists : <span>4</span></p>
+         <p>total videos : <span>18</span></p>
+         <p>total likes : <span>1208</span></p>
+         <p>total comments : <span>52</span></p>
+      </div>
+   </div>
+
+</section>
+
+<section class="courses">
+
+   <h1 class="heading">our courses</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="thumb">
+            <img src="images/thumb-1.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete HTML tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="thumb">
+            <img src="images/thumb-2.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete CSS tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="thumb">
+            <img src="images/thumb-3.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete javascript tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+      <div class="box">
+         <div class="thumb">
+            <img src="images/thumb-4.png" alt="">
+            <span>10 videos</span>
+         </div>
+         <h3 class="title">complete Boostrap tutorial</h3>
+         <a href="playlist.html" class="inline-btn">view playlist</a>
+      </div>
+
+   </div> -->
+
+</section> 
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+    &copy; copyright @ 2023 by <span>Virus X</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../js/script.js"></script>
+
+<script>
+   const API_KEY = 'AIzaSyAw9VHVW8xRHM4bam_mr_XOM2rW3SeclHQ'; // Replace with your API key
+   const MAIN_FOLDER_ID = '1IMEMgfVS4r5BZD9Uy0rA-bdOwi12XQsd'; // Replace with your main folder ID
+   const FOLDER_IDS = { 'MAIN': MAIN_FOLDER_ID }; // Mapping of folder names to folder IDs
+
+   let currentFolderId = MAIN_FOLDER_ID;
+   let previousFolderId = null;
+
+   function fetchFiles(folderId) {
+       const endpoint = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${API_KEY}`;
+       
+       fetch(endpoint)
+           .then(response => response.json())
+           .then(data => {
+               const files = data.files;
+               const fileContainer = document.getElementById('fileContainer');
+               fileContainer.innerHTML = '';
+
+               files.forEach(file => {
+                   const fileLink = `https://drive.google.com/uc?export=download&id=${file.id}`;
+                   const fileItem = document.createElement('div');
+                   fileItem.classList.add('file-item');
+                   if (file.mimeType === 'application/vnd.google-apps.folder') {
+                       fileItem.innerHTML = `<a href="#" onclick="navigateToFolder('${file.id}')">${file.name}</a>`;
+                   } else {
+                       fileItem.innerHTML = `<a href="${fileLink}" target="_blank">${file.name}</a>`;
+                   }
+                   fileContainer.appendChild(fileItem);
+               });
+           })
+           .catch(error => console.error('Error fetching files:', error));
+   }
+
+   function navigateToFolder(folderId) {
+       if (currentFolderId !== MAIN_FOLDER_ID) {
+           previousFolderId = currentFolderId;
+       }
+       currentFolderId = folderId;
+       fetchFiles(currentFolderId);
+   }
+
+   function goHome() {
+       if (currentFolderId !== MAIN_FOLDER_ID) {
+           previousFolderId = currentFolderId;
+           currentFolderId = MAIN_FOLDER_ID;
+           fetchFiles(currentFolderId);
+       }
+   }
+
+   function setView(view) {
+       const fileContainer = document.getElementById('fileContainer');
+       if (view === 'grid') {
+           fileContainer.classList.add('file-grid');
+           fileContainer.classList.remove('file-list');
+       } else {
+           fileContainer.classList.add('file-list');
+           fileContainer.classList.remove('file-grid');
+       }
+   }
+
+   document.getElementById('listView').addEventListener('click', () => {
+       setView('list');
+       document.getElementById('listView').classList.add('active');
+       document.getElementById('gridView').classList.remove('active');
+   });
+
+   document.getElementById('gridView').addEventListener('click', () => {
+       setView('grid');
+       document.getElementById('gridView').classList.add('active');
+       document.getElementById('listView').classList.remove('active');
+   });
+
+   document.getElementById('homeButton').addEventListener('click', goHome);
+
+   // Initial load
+   fetchFiles(currentFolderId);
+</script>
+   
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Load saved profile from localStorage
+        const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+ 
+        if (savedProfile) {
+            // Update the profile section with profile data
+            const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+            const sidebarProfileName = document.getElementById('sidebarProfileName');
+            const sidebarAbout = document.getElementById('sidebarAbout');
+ 
+            // Update the profile picture
+            if (savedProfile.profilePic) {
+                sidebarProfilePic.src = savedProfile.profilePic;
+            }
+ 
+            // Update the name and about section
+            sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+            sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+        }
+    });
+ </script>
+ <script>
+ document.addEventListener('DOMContentLoaded', function () {
+     // Load saved profile from localStorage
+     const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+ 
+     if (savedProfile) {
+         // Update the profile section in the sidebar
+         const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+         const sidebarProfileName = document.getElementById('sidebarProfileName');
+         const sidebarAbout = document.getElementById('sidebarAbout');
+ 
+         if (sidebarProfilePic && savedProfile.profilePic) {
+             sidebarProfilePic.src = savedProfile.profilePic;
+         }
+ 
+         if (sidebarProfileName) {
+             sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+         }
+ 
+         if (sidebarAbout) {
+             sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+         }
+ 
+         // Update the main profile section
+         const profilePic = document.getElementById('profilePic');
+         const profileName = document.getElementById('profileName');
+         const profileRole = document.getElementById('profileRole');
+         const profileAbout = document.getElementById('profileAbout');
+ 
+         if (profilePic && savedProfile.profilePic) {
+             profilePic.src = savedProfile.profilePic;
+         }
+ 
+         if (profileName) {
+             profileName.textContent = savedProfile.name || 'No Name Provided';
+         }
+ 
+         if (profileRole) {
+             profileRole.textContent = savedProfile.role || 'Student';
+         }
+ 
+         if (profileAbout) {
+             profileAbout.textContent = savedProfile.about || 'No About Information Provided';
+         }
+     }
+ });
+ 
+ 
+ </script>
+
+
+
+</body>
+</html>

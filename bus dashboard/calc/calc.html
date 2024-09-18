@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>login</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../css/style.css">
+   <link rel="stylesheet" href="calc.css">
+<style>
+   :root{
+   --main-color:#fdd318;
+   --red:#e74c3c;
+   --orange:#f39c12;
+   --light-color:#000000;
+   --light-bg:#eee;
+   --black:#000000;
+   --white:#ffffff;
+   --border:.1rem solid rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+   
+      <section class="flex">
+         <a href="../home.html" class="logo" style="font-weight: 1000;" >Must</a> 
+         <a href="../home.html"><img class="rounded-image" src="../images/Must Dsk.png" alt="msd" > </a> 
+         <a href="../home.html" class="logo" style="font-weight: 1000;" >Desktop</a>
+         <a href="home.html" class="logo"  style="font-size: x-small;" >_Beta</a>  
+         <section></section>
+
+    <!--  <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form> -->
+
+      <div class="icons">
+         <a href="calc.html"> <div id="" class="fa-solid fa-calculator"></div> </a>
+           <div id="user-btn" class="fas fa-user"></div>
+           <div id="toggle-btn" class="fas fa-sun"></div>
+           <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+        <div class="profile">
+         <img src="../images/pic-1.jpg" class="image" alt="Profile Picture" id="sidebarProfilePic">
+         <h3 class="name" id="sidebarProfileName"></h3>
+         <p class="role" id="sidebarAbout"></p>
+         <a href="../profile.html" class="btn">View Profile</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="../images/Must Dsk.png" id="profilePic" class="image" alt="Profile Picture">
+      <h3 class="name" id="profileName"></h3>
+      <p class="profileAbout" id="sidebarAbout"></p>
+      <a href="../profile.html" class="btn">View Profile</a>
+   </div>
+   
+
+   <nav class="navbar">
+      <a href="../home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="../courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+      <a href="../about.html"><i class="fas fa-question"></i><span>About</span></a>
+      <a href="../projects.html"><i class="fas fa-chalkboard-user"></i><span>Projects</span></a>
+     <!-- <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a> -->
+   </nav>
+
+</div>
+
+<section class="form-container">
+
+   <form action="" method="post" enctype="multipart/form-data">
+      <div id="calculator"> 
+        <span id="creditError" class="error"></span> 
+        <span id="inputError" class="error"></span> 
+        <br> 
+        <h2 style="font-size: large;">GPA Calculator</h2> 
+        <form id="cgpaForm"> 
+    
+            <label for="subject">Subject:</label> 
+            <input type="text" id="subject" required> 
+    
+            <label for="grade">Grade:</label> 
+            <select id="grade"> 
+                <option value="A*">A*</option> 
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option> 
+                <option value="B">B</option>
+                <option value="B-">B-</option>
+                <option value="C+">C+</option>   
+                <option value="C">C</option>
+                <option value="C-">C-</option>
+                <option value="D+">D+</option>   
+                <option value="D">D</option> 
+                <option value="F">F</option> 
+                
+            </select> 
+    
+            <label for="credit">Credit:</label> 
+            <input type="number" id="credit" min="1" required> 
+    
+            <button type="button" onclick="addSubject()"> 
+                  Add / Edit Subject 
+              </button> 
+        </form> 
+        <h3>Calculate GPA</h3> 
+        <table id="subjectTable"> 
+            <thead> 
+                <tr> 
+                    <th>Subject</th> 
+                    <th>Grade</th> 
+                    <th>Credit</th> 
+                    <th>Action</th> 
+                </tr> 
+            </thead> 
+            <tbody style="color: var(--black);" id="subjectList"></tbody> 
+        </table> 
+    
+        <h3>GPA: <span id="cgpa">0.00</span></h3> 
+    
+        <button type="button" onclick="calculateCGPA()"> 
+              Calculate CGPA 
+          </button> 
+        <button type="button" onclick="resetForm()"> 
+              Reset 
+          </button>
+   </form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>Virus X</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="../js/script.js"></script>
+<script type="text/javascript" src="script.js"></script> 
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+       if (savedProfile) {
+           // Update the profile section with profile data
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+
+           // Update the profile picture
+           if (savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+
+           // Update the name and about section
+           sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+       }
+   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Load saved profile from localStorage
+    const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+    if (savedProfile) {
+        // Update the profile section in the sidebar
+        const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+        const sidebarProfileName = document.getElementById('sidebarProfileName');
+        const sidebarAbout = document.getElementById('sidebarAbout');
+
+        if (sidebarProfilePic && savedProfile.profilePic) {
+            sidebarProfilePic.src = savedProfile.profilePic;
+        }
+
+        if (sidebarProfileName) {
+            sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+        }
+
+        if (sidebarAbout) {
+            sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+        }
+
+        // Update the main profile section
+        const profilePic = document.getElementById('profilePic');
+        const profileName = document.getElementById('profileName');
+        const profileRole = document.getElementById('profileRole');
+        const profileAbout = document.getElementById('profileAbout');
+
+        if (profilePic && savedProfile.profilePic) {
+            profilePic.src = savedProfile.profilePic;
+        }
+
+        if (profileName) {
+            profileName.textContent = savedProfile.name || 'No Name Provided';
+        }
+
+        if (profileRole) {
+            profileRole.textContent = savedProfile.role || 'Student';
+        }
+
+        if (profileAbout) {
+            profileAbout.textContent = savedProfile.about || 'No About Information Provided';
+        }
+    }
+});
+
+
+</script>  
+</body>
+</html>

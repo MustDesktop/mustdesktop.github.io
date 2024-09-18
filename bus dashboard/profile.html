@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>profile</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+      <a href="home.html" class="logo" style="font-weight: 1000;" >Must</a> 
+      <a href="home.html"><img class="rounded-image" src="images/Must Dsk.png" alt="msd" > </a> 
+      <a href="home.html" class="logo" style="font-weight: 1000;" >Desktop</a>
+      <a href="home.html" class="logo"  style="font-size: x-small;" >_Beta</a>  
+      <section></section>
+
+      <div class="icons">
+         <a href="calc/calc.html"> <div id="" class="fa-solid fa-calculator"></div> </a>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/user-6380868_640.png" class="image" alt="Profile Picture" id="sidebarProfilePic">
+         <h3 class="name" id="sidebarProfileName">must Desktop</h3>
+         <p class="role" id="sidebarAbout">studen</p>
+         <a href="profile.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/default.jpg" id="profilePic" class="image" alt="Profile Picture">
+      <h3 class="name" id="profileName">Default Name</h3>
+      <p class="profileAbout" id="sidebarAbout"></p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>About</span></a>
+      <a href="projects.html"><i class="fas fa-chalkboard-user"></i><span>Projects</span></a>
+     <!-- <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a> -->
+   </nav>
+
+</div>
+
+<section class="user-profile">
+
+   <h1 class="heading">your profile</h1>
+
+   <div class="info">
+
+      <div class="user">
+         <img src="images/default.jpg" id="picpro" class="image" alt="Profile Picture">
+         <h3 class="name" id="profname">Default Name</h3>
+         <p class="profileAbout" id="siAbout"></p>
+         <a href="update.html" class="inline-btn">update profile</a>
+      </div>
+   
+      <div class="box-container">
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fa-duotone fa-solid fa-graduation-cap"></i>               <div>
+                  <span>Smart Learning</span>
+                  <p></p>
+               </div>
+            </div>
+            <a href="https://smartlearning.must.edu.eg/" class="inline-btn">Here</a>
+         </div>
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fa-solid fa-calendar-days"></i>               <div>
+                  <span>Banner</span>
+                  <p></p>
+               </div>
+            </div>
+            <a href="https://register.must.edu.eg/StudentRegistrationSsb/ssb/registration" class="inline-btn">Here</a>
+         </div>
+   
+         <div class="box">
+            <div class="flex">
+<i class="fa-solid fa-building-columns"></i>               <div>
+                  <span>Admission</span>
+                  <p></p>
+               </div>
+            </div>
+            <a href="https://www.must.edu.eg/" class="inline-btn">Here</a>
+         </div>
+   
+      </div>
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>Virus X</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+       if (savedProfile) {
+           // Update the profile section with profile data
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+
+           // Update the profile picture
+           if (savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+
+           // Update the name and about section
+           sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+       }
+   });
+</script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+   
+       if (savedProfile) {
+           // Update the profile section in the sidebar
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+   
+           if (sidebarProfilePic && savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+   
+           if (sidebarProfileName) {
+               sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           }
+   
+           if (sidebarAbout) {
+               sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+           }
+   
+           // Update the main profile section
+           const profilePic = document.getElementById('profilePic');
+           const profileName = document.getElementById('profileName');
+           const profileRole = document.getElementById('profileRole');
+           const profileAbout = document.getElementById('profileAbout');
+   
+           if (profilePic && savedProfile.profilePic) {
+               profilePic.src = savedProfile.profilePic;
+           }
+   
+           if (profileName) {
+               profileName.textContent = savedProfile.name || 'No Name Provided';
+           }
+   
+           if (profileRole) {
+               profileRole.textContent = savedProfile.role || 'Student';
+           }
+   
+           if (profileAbout) {
+               profileAbout.textContent = savedProfile.about || 'No About Information Provided';
+           }
+       }
+   });
+   
+   
+   </script>
+   <script>
+      document.addEventListener('DOMContentLoaded', function () {
+    // Load saved profile from localStorage
+    const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+    if (savedProfile) {
+        // Update the profile section with saved data
+        const picpro = document.getElementById('picpro');  // Profile Picture
+        const profname = document.getElementById('profname');  // Profile Name
+        const siAbout = document.getElementById('siAbout');  // About Section
+
+        // Update profile picture if available
+        if (picpro && savedProfile.profilePic) {
+            picpro.src = savedProfile.profilePic;
+        }
+
+        // Update profile name if available
+        if (profname) {
+            profname.textContent = savedProfile.name || 'No Name Provided';
+        }
+
+        // Update about section if available
+        if (siAbout) {
+            siAbout.textContent = savedProfile.about || 'No About Information Provided';
+        }
+    }
+});
+
+   </script>
+   
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="images/Must Dsk.png" type="image/x-icon">
+   <title>courses</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+      <a href="home.html" class="logo" style="font-weight: 1000;" >Must</a> 
+      <a href="home.html"><img class="rounded-image" src="images/Must Dsk.png" alt="msd" > </a> 
+      <a href="home.html" class="logo" style="font-weight: 1000;" >Desktop</a>
+      <a href="home.html" class="logo"  style="font-size: x-small;" >_Beta</a>  
+      <section></section>
+     <!-- <form method="post" class="search-form">
+         <input type="text" name="search_box" id="searchInput" onkeyup="search_m()" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+         <ul id="suggestionsList" class="suggestions-list"></ul>
+     </form> -->
+     
+      
+
+      <div class="icons">
+         <a href="calc/calc.html"> <div id="" class="fa-solid fa-calculator"></div> </a>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="Profile Picture" id="sidebarProfilePic">
+         <h3 class="name" id="sidebarProfileName">must Desktop</h3>
+         <p class="role" id="sidebarAbout">studen</p>
+         <a href="profile.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+
+         </div>
+     </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/default.jpg" id="profilePic" class="image" alt="Profile Picture">
+      <h3 class="name" id="profileName">Default Name</h3>
+      <p class="profileAbout" id="sidebarAbout"></p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="./courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>About</span></a>
+      <a href="projects.html"><i class="fas fa-chalkboard-user"></i><span>Projects</span></a>
+     <!-- <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a> -->
+   </nav>
+
+</div>
+
+<section class="courses">
+   <section class="teachers">
+
+   <form action="" method="post" class="search-tutor" onsubmit="return handleSearch();">
+      <input type="text" name="search" placeholder="search Courses..., just type and enter to show" id="search-tutor" required maxlength="100">
+      <button type="submit" class="fas fa-search" name="search_tutor"></button>
+  </form>
+  <ul id="list">
+   <li hidden class="search"><a href="courses/acc.html" style="color: var(--black);" style="font-weight: 1000;">Accounting</a></li>
+   <li hidden class="search"><a href="courses/bus.html" style="color: var(--black);" style="font-weight: 1000;" >Business</a></li>
+   <li hidden class="search"><a href="courses/eco.html" style="color: var(--black);" style="font-weight: 1000;" >Economics</a></li>
+   <li hidden class="search"><a href="courses/info.html" style="color: var(--black);" style="font-weight: 1000;">Information System</a></li>
+   <li hidden class="search"><a href="courses/sts.html" style="color: var(--black);" style="font-weight: 1000;" >Statistics</a></li>
+   <li hidden class="search"><a href="courses/math.html" style="color: var(--black);" style="font-weight: 1000;" >Math</a></li>
+   <li hidden class="search"><a href="courses/humn.html" style="color: var(--black);" style="font-weight: 1000;" >Humn</a></li>
+   <li hidden class="search"><a href="courses/fin.html" style="color: var(--black);" style="font-weight: 1000;" >Finance</a></li>
+   <li hidden class="search"><a href="courses/pol.html" style="color: var(--black);" style="font-weight: 1000;" >Political</a></li>
+   <li hidden class="search"><a href="courses/law.html" style="color: var(--black);" style="font-weight: 1000;" >Law</a></li>
+   <li hidden class="search"><a href="courses/comp.html" style="color: var(--black);" style="font-weight: 1000;" >Computer</a></li>
+   <li hidden class="search"><a href="courses/other.html" style="color: var(--black);" style="font-weight: 1000;" >Other</a></li>
+
+
+
+
+
+
+</ul>
+   <h1 class="heading">courses</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/images/must-dsk-96x96.png" alt="">
+            <div class="info">
+               <h3>Acc</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/acc.jpeg" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Accounting</h3>
+         <a href="courses/acc.html" class="inline-btn">view Course</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div class="info">
+               <h3>Bus</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/bus.jpg" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Business</h3>
+         <a href="courses/bus.html" class="inline-btn">view Course</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div class="info">
+               <h3>Eco</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/eco.jpg" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Economics</h3>
+         <a href="courses/eco.html" class="inline-btn">view Course</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/images/must-dsk-96x96.png" alt="">
+            <div class="info">
+               <h3>Math</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/math.jpg" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Math</h3>
+         <a href="courses/math.html" class="inline-btn">view course</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div class="info">
+               <h3>Info</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/info.png" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Information System</h3>
+         <a href="courses/info.html" class="inline-btn">view Course</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div class="info">
+               <h3>Comp</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/comp.jpg" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Computer</h3>
+         <a href="courses/comp.html" class="inline-btn">view Course</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div class="info">
+               <h3>Sts</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/sts.png" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Statistics</h3>
+         <a href="courses/sts.html" class="inline-btn">view Course</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div class="info">
+               <h3>Pol</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/pol.jpg" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Politics</h3>
+         <a href="courses/pol.html" class="inline-btn">view Course</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div class="info">
+               <h3>Fin</h3>
+      <!--   <span></span> -->
+   </div>
+         </div>
+         <div class="thumb">
+            <img src="images/images/fin.jpg" alt="">
+      <!--   <span></span> -->
+   </div>
+         <h3 class="title">Finance</h3>
+         <a href="courses/fin.html" class="inline-btn">view Course</a>
+      </div>
+      
+   <div class="box">
+      <div class="tutor">
+         <img src="images/Must Dsk.png" alt="">
+         <div class="info">
+            <h3>Law</h3>
+      <!--   <span></span> -->
+   </div>
+      </div>
+      <div class="thumb">
+         <img src="images/images/law.jpg" alt="">
+      <!--   <span></span> -->
+   </div>
+      <h3 class="title">Law</h3>
+      <a href="courses/law.html" class="inline-btn">view Course</a>
+   </div>
+   
+   <div class="box">
+      <div class="tutor">
+         <img src="images/Must Dsk.png" alt="">
+         <div class="info">
+            <h3>Humn</h3>
+      <!--   <span></span> -->
+   </div>
+      </div>
+      <div class="thumb">
+         <img src="images/images/humn.jpg" alt="">
+      <!--   <span></span> -->
+            </div>
+      <h3 class="title">Humn</h3>
+      <a href="courses/humn.html" class="inline-btn">view Course</a>
+   </div>
+
+   <div class="box">
+      <div class="tutor">
+         <img src="images/Must Dsk.png" alt="">
+         <div class="info">
+            <h3>Other</h3>
+<!--   <span></span> -->
+         </div>
+      </div>
+      <div class="thumb">
+         <img src="images/images/other1.png" alt="">
+      <!--   <span></span> -->
+      </div>
+      <h3 class="title">Other</h3>
+      <a href="courses/other.html" class="inline-btn">view Course</a>
+   </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>Virus X</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+       if (savedProfile) {
+           // Update the profile section with profile data
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+
+           // Update the profile picture
+           if (savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+
+           // Update the name and about section
+           sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+       }
+   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Load saved profile from localStorage
+    const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+    if (savedProfile) {
+        // Update the profile section in the sidebar
+        const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+        const sidebarProfileName = document.getElementById('sidebarProfileName');
+        const sidebarAbout = document.getElementById('sidebarAbout');
+
+        if (sidebarProfilePic && savedProfile.profilePic) {
+            sidebarProfilePic.src = savedProfile.profilePic;
+        }
+
+        if (sidebarProfileName) {
+            sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+        }
+
+        if (sidebarAbout) {
+            sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+        }
+
+        // Update the main profile section
+        const profilePic = document.getElementById('profilePic');
+        const profileName = document.getElementById('profileName');
+        const profileRole = document.getElementById('profileRole');
+        const profileAbout = document.getElementById('profileAbout');
+
+        if (profilePic && savedProfile.profilePic) {
+            profilePic.src = savedProfile.profilePic;
+        }
+
+        if (profileName) {
+            profileName.textContent = savedProfile.name || 'No Name Provided';
+        }
+
+        if (profileRole) {
+            profileRole.textContent = savedProfile.role || 'Student';
+        }
+
+        if (profileAbout) {
+            profileAbout.textContent = savedProfile.about || 'No About Information Provided';
+        }
+    }
+});
+
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('searchInput');
+    const suggestionsList = document.getElementById('suggestionsList');
+
+    // Example data for suggestions (can be replaced with real data)
+    const suggestions = [
+        { name: 'Introduction to Programming', url: 'course1.html' },
+        { name: 'Advanced JavaScript', url: 'course2.html' },
+        { name: 'Web Development Basics', url: 'course3.html' },
+        { name: 'Data Structures and Algorithms', url: 'course4.html' },
+        { name: 'Machine Learning', url: 'course5.html' },
+        { name: 'Database Management', url: 'course6.html' },
+        { name: 'Software Engineering', url: 'course7.html' },
+        { name: 'Cybersecurity Fundamentals', url: 'course8.html' }
+    ];
+
+    window.search_m = function () {
+        const query = searchInput.value.toLowerCase();
+        suggestionsList.innerHTML = '';
+
+        if (query) {
+            const filteredSuggestions = suggestions.filter(item => item.name.toLowerCase().includes(query));
+
+            filteredSuggestions.forEach(suggestion => {
+                const li = document.createElement('li');
+                li.textContent = suggestion.name;
+                li.addEventListener('click', function () {
+                    window.location.href = suggestion.url; // Redirect to the suggestion URL
+                });
+                suggestionsList.appendChild(li);
+            });
+        }
+    };
+
+    // Redirect on search button click
+    document.querySelector('.search-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+        const query = searchInput.value;
+        // Redirect to a search results page or handle search logic
+        window.location.href = `search_results.html?query=${encodeURIComponent(query)}`;
+    });
+
+    // Hide suggestions list when clicking outside
+    document.addEventListener('click', function (event) {
+        if (!searchInput.contains(event.target) && !suggestionsList.contains(event.target)) {
+            suggestionsList.innerHTML = '';
+        }
+    });
+});
+
+
+</script>
+<script>
+   // JavaScript code
+
+function mms() {
+   let input = document.getElementById('search-tutor').value
+   input = input.toLowerCase();
+   let x = document.getElementsByClassName('search');
+
+   for (i = 0; i < x.length; i++) {
+       if (!x[i].innerHTML.toLowerCase().includes(input)) {
+           x[i].style.display = "none";
+       }
+       else {
+           x[i].style.display = "list-item";
+       }
+   }
+}
+
+</script>
+<script>
+   function handleSearch() {
+    var input = document.getElementById('search-tutor').value.trim();
+    var form = document.querySelector('.search-tutor');
+    
+    if (input === '') {
+        alert('Please enter a search term');
+        return false; // Prevent form submission
+    }
+    
+    var url;
+    switch (input.toLowerCase()) {
+        case 'tutor1':
+            url = 'https://example.com/tutor1';
+            break;
+        case 'tutor2':
+            url = 'https://example.com/tutor2';
+            break;
+        // Add more cases as needed
+        default:
+            url = 'https://example.com/noresults'; // Default URL if no match
+            break;
+    }
+    
+    form.action = url; // Set the form action to the selected URL
+    return true; // Allow form submission
+}
+
+</script>
+<script>
+function mms() {
+   let input = document.getElementById('search-tutor').value.toLowerCase();
+   let x = document.getElementsByClassName('search');
+
+   for (let i = 0; i < x.length; i++) {
+       if (!x[i].innerHTML.toLowerCase().includes(input)) {
+           x[i].style.display = "none";
+       } else {
+           x[i].style.display = "list-item";
+       }
+   }
+}
+
+function handleSearch() {
+   let input = document.getElementById('search-tutor').value.trim().toLowerCase();
+   let validKeywords = {
+       'tutor1': 'https://example.com/tutor1',
+       'tutor2': 'https://example.com/tutor2',
+       // Add more keywords and URLs as needed
+   };
+   
+   let url = validKeywords[input];
+   
+   if (url) {
+       // Redirect to the URL if the input matches a keyword
+       window.location.href = url;
+   } else {
+       // Call mms to handle the search filtering
+       mms();
+   }
+   
+   return false; // Prevent form from submitting the default way
+}
+</script>
+</body>
+</html>

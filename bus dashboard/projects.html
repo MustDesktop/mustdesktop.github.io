@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="images/Must Dsk.png" type="image/x-icon">
+   <title>Projects</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <style>
+      :root{
+   --main-color:#0059ff;
+   --red:#e74c3c;
+   --orange:#f39c12;
+   --light-color:#000000;
+   --light-bg:#eee;
+   --black:#000000;
+   --white:#fff;
+   --border:.1rem solid rgba(0,0,0,.2);
+}
+   </style>
+
+</head>
+<body>
+
+<header class="header">
+ 
+  <section class="flex">
+   <div class="typewriter">
+      <h1 style="font-size: large;">Code</h1>
+   <h1 style="font-size: x-large;">craft</h1>
+    </div>
+    <!--  <a href="home.html" class="logo" style="font-weight: 1000;" >Must</a> 
+      <a href="home.html"><img class="rounded-image" src="images/Must Dsk.png" alt="msd" > </a> 
+      <a href="home.html" class="logo" style="font-weight: 1000;" >Desktop Beta</a>  -->
+      <section></section> 
+    
+
+    <!--  <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search-tutor" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form> -->
+
+      <div class="icons">
+         <a href="calc/calc.html"> <div id="" class="fa-solid fa-calculator"></div> </a>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="Profile Picture" id="sidebarProfilePic">
+         <h3 class="name" id="sidebarProfileName">must Desktop</h3>
+         <p class="role" id="sidebarAbout">studen</p>
+         <a href="profile.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="images/default.jpg" id="profilePic" class="image" alt="Profile Picture">
+      <h3 class="name" id="profileName">Default Name</h3>
+      <p class="profileAbout" id="sidebarAbout"></p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>About</span></a>
+      <a href="projects.html"><i class="fas fa-chalkboard-user"></i><span>Projects</span></a>
+     <!-- <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a> -->
+   </nav>
+
+</div>
+
+<section class="teachers">
+
+   <form action="" method="post" class="search-tutor" onsubmit="return handleSearch();">
+      <input type="text" name="search" placeholder="search Projects, just type and click search and it will show" id="search-tutor" required maxlength="100">
+      <button type="submit" class="fas fa-search" name="search_tutor"></button>
+  </form>
+  
+  
+
+   </form>
+
+
+   <ul id="list">
+      <li hidden class="search"><a href="projects/Qr/qrproject.html" style="color: var(--black);" style="font-weight: 1000;">Qr Generator</a></li>
+      <li hidden class="search"><a href="#" style="color: var(--black);" style="font-weight: 1000;" >#</a></li>
+  </ul>
+  
+  </div>
+   <div class="box-container">
+
+   <!-- <div class="box offer">
+         <h3></h3>
+         <p></p>
+         <a href="#" class="inline-btn"></a>
+      </div> -->
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div>
+               <h3>Qr Generator</h3>
+               <span>Project Website</span>
+            </div>
+         </div>
+         <div id="fileContainer" class="file-list"></div>
+         <p><i class="fab fa-html5"></i> HTML:<span> 1</span></p>
+         <p><i class="fa-brands fa-css3-alt"></i> CSS: <span>1</span></p>
+         <p><i class="fa-brands fa-square-js"></i> JavaScript:<span>3</span></p>
+         <p><i class="fa-solid fa-globe"></i> <i class="fa-brands fa-square-js"></i> Online JavaScript:<span>2</span></p>
+         <a href="projects/Qr/qrproject.html" class="inline-btn">view project</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div>
+               <h3>. .</h3>
+               <span>.</span>
+            </div>
+         </div>
+         <div id="fileContainer" class="file-list"></div>
+         <p>. <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <a href="#" class="inline-btn">view project</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div>
+               <h3>. .</h3>
+               <span>.</span>
+            </div>
+         </div>
+         <div id="fileContainer" class="file-list"></div>
+         <p>. <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <a href="#" class="inline-btn">view project</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div>
+               <h3>. .</h3>
+               <span>.</span>
+            </div>
+         </div>
+         <div id="fileContainer" class="file-list"></div>
+         <p>. <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <a href="#" class="inline-btn">view project</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div>
+               <h3>. .</h3>
+               <span>.</span>
+            </div>
+         </div>
+         <div id="fileContainer" class="file-list"></div>
+         <p>. <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <a href="#" class="inline-btn">view project</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div>
+               <h3>. .</h3>
+               <span>.</span>
+            </div>
+         </div>
+         <div id="fileContainer" class="file-list"></div>
+         <p>. <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <a href="#" class="inline-btn">view project</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/Must Dsk.png" alt="">
+            <div>
+               <h3>. .</h3>
+               <span>.</span>
+            </div>
+         </div>
+         <div id="fileContainer" class="file-list"></div>
+         <p>. <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <p>. . : <span>.</span></p>
+         <a href="#" class="inline-btn">view project</a>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>Virus X</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+       if (savedProfile) {
+           // Update the profile section with profile data
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+
+           // Update the profile picture
+           if (savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+
+           // Update the name and about section
+           sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+       }
+   });
+</script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+   
+       if (savedProfile) {
+           // Update the profile section in the sidebar
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+   
+           if (sidebarProfilePic && savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+   
+           if (sidebarProfileName) {
+               sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           }
+   
+           if (sidebarAbout) {
+               sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+           }
+   
+           // Update the main profile section
+           const profilePic = document.getElementById('profilePic');
+           const profileName = document.getElementById('profileName');
+           const profileRole = document.getElementById('profileRole');
+           const profileAbout = document.getElementById('profileAbout');
+   
+           if (profilePic && savedProfile.profilePic) {
+               profilePic.src = savedProfile.profilePic;
+           }
+   
+           if (profileName) {
+               profileName.textContent = savedProfile.name || 'No Name Provided';
+           }
+   
+           if (profileRole) {
+               profileRole.textContent = savedProfile.role || 'Student';
+           }
+   
+           if (profileAbout) {
+               profileAbout.textContent = savedProfile.about || 'No About Information Provided';
+           }
+       }
+   });
+   
+   
+   </script>
+<script>
+   // JavaScript code
+
+function mms() {
+   let input = document.getElementById('search-tutor').value
+   input = input.toLowerCase();
+   let x = document.getElementsByClassName('search');
+
+   for (i = 0; i < x.length; i++) {
+       if (!x[i].innerHTML.toLowerCase().includes(input)) {
+           x[i].style.display = "none";
+       }
+       else {
+           x[i].style.display = "list-item";
+       }
+   }
+}
+
+</script>
+<script>
+   function handleSearch() {
+    var input = document.getElementById('search-tutor').value.trim();
+    var form = document.querySelector('.search-tutor');
+    
+    if (input === '') {
+        alert('Please enter a search term');
+        return false; // Prevent form submission
+    }
+    
+    var url;
+    switch (input.toLowerCase()) {
+        case 'tutor1':
+            url = 'https://example.com/tutor1';
+            break;
+        case 'tutor2':
+            url = 'https://example.com/tutor2';
+            break;
+        // Add more cases as needed
+        default:
+            url = 'https://example.com/noresults'; // Default URL if no match
+            break;
+    }
+    
+    form.action = url; // Set the form action to the selected URL
+    return true; // Allow form submission
+}
+
+</script>
+<script>
+function mms() {
+   let input = document.getElementById('search-tutor').value.toLowerCase();
+   let x = document.getElementsByClassName('search');
+
+   for (let i = 0; i < x.length; i++) {
+       if (!x[i].innerHTML.toLowerCase().includes(input)) {
+           x[i].style.display = "none";
+       } else {
+           x[i].style.display = "list-item";
+       }
+   }
+}
+
+function handleSearch() {
+   let input = document.getElementById('search-tutor').value.trim().toLowerCase();
+   let validKeywords = {
+       'tutor1': 'https://example.com/tutor1',
+       'tutor2': 'https://example.com/tutor2',
+       // Add more keywords and URLs as needed
+   };
+   
+   let url = validKeywords[input];
+   
+   if (url) {
+       // Redirect to the URL if the input matches a keyword
+       window.location.href = url;
+   } else {
+       // Call mms to handle the search filtering
+       mms();
+   }
+   
+   return false; // Prevent form from submitting the default way
+}
+</script>
+</body>
+</html>

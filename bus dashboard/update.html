@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>update</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+
+   <section class="flex">
+      <a href="home.html" class="logo" style="font-weight: 1000;" >Must</a> 
+      <a href="home.html"><img class="rounded-image" src="images/Must Dsk.png" alt="msd" > </a> 
+      <a href="home.html" class="logo" style="font-weight: 1000;" >Desktop</a>
+      <a href="home.html" class="logo"  style="font-size: x-small;" >_Beta</a>  
+      <section></section>
+
+     <!-- <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form> -->
+
+      <div class="icons">
+         <a href="calc/calc.html"> <div id="" class="fa-solid fa-calculator"></div> </a>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+         <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="Profile Picture" id="sidebarProfilePic">
+         <h3 class="name" id="sidebarProfileName"></h3>
+         <p class="role" id="sidebarAbout"></p>
+         <a href="profile.html" class="btn">View Profile</a>
+         <div class="flex-btn">
+
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img id="preview" src="images/user-6380868_640.png" src="#" alt="Profile Picture Preview" class="image" class="circular-image hidden">
+      <h3 class="name" id="dis"></h3>
+      <p class="profileAbout" id="sidebarAbout"></p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+      <a href="about.html"><i class="fas fa-question"></i><span>About</span></a>
+      <a href="projects.html"><i class="fas fa-chalkboard-user"></i><span>Projects</span></a>
+     <!-- <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a> -->
+   </nav>
+
+</div>
+<div class="account-settings">
+   <div class="user-profile">
+   <div class="user-avatar">
+<section class="form-container">
+
+   <form action="" method="post" enctype="multipart/form-data">
+      <h3>Profile</h3>
+      <p>Name</p>
+      <input type="text" id="name" name="name" required class="box" placeholder="add your name">
+    <!--  <input type="text" name="name" placeholder="must Desktop" maxlength="50" class="box"> -->
+      <p>About </p>
+      <textarea id="aboutInput" name="aboutInput" placeholder="Enter your about text here..." class="box"></textarea> <!-- Added textarea for About input -->
+
+     <!-- <input type="email" name="email" placeholder="shaikh@gmail.come" maxlength="50" class="box"> -->
+    <!--  <p>previous password</p> -->
+    <!--  <input type="password" name="old_pass" placeholder="enter your old password" maxlength="20" class="box">
+      <p>new password</p>
+      <input type="password" name="new_pass" placeholder="enter your old password" maxlength="20" class="box">
+      <p>confirm password</p>
+      <input type="password" name="c_pass" placeholder="confirm your new password" maxlength="20" class="box"> -->
+      <p>Pic</p>
+      <input type="file" id="profilePic" name="profilePic" accept="image/*" class="box" class="Visible">
+
+     <!-- <input type="file" accept="image/*" class="box"> -->
+      <!--<button type="button" id="deletePic" class="btn btn-danger hidden">Delete Photo</button>-->
+
+<button type="submit" class="btn btn-primary" class="btn">Save Profile</button>
+   <!--  <input type="submit" value="update profile" name="submit" class="btn">  -->
+   </form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2023 by <span>Virus X</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+     const profileForm = document.getElementById('profileForm');
+     const profilePicInput = document.getElementById('profilePic');
+     const preview = document.getElementById('preview');
+     const deletePic = document.getElementById('deletePic');
+     const displayName = document.getElementById('displayName');
+     const saveButton = document.querySelector('.btn.btn-primary'); // Select the save button
+     const aboutText = document.querySelector('.about p');
+     const aboutInput = document.getElementById('aboutInput'); // New About input
+   
+     // Handle image preview
+     profilePicInput.addEventListener('change', function (e) {
+       const file = e.target.files[0];
+       if (file && (file.type === 'image/jpeg' || file.type === 'image/png')) {
+         const reader = new FileReader();
+         reader.onload = function (e) {
+           preview.src = e.target.result;
+           preview.classList.remove('hidden');
+           deletePic.classList.remove('hidden');
+         };
+         reader.readAsDataURL(file);
+       } else {
+         alert('Please select a valid image file (JPG or PNG).');
+         profilePicInput.value = '';
+       }
+     });
+   
+     // Handle form submission when the Save button is clicked
+     saveButton.addEventListener('click', function (e) {
+       e.preventDefault();
+       const name = document.getElementById('name').value;
+       const aboutContent = aboutInput.value; // Capture About input
+       const profilePic = preview.src !== '#' ? preview.src : '';
+   
+       const userProfile = {
+         name: name,
+         about: aboutContent, // Save About content
+         profilePic: profilePic
+       };
+   
+       localStorage.setItem('userProfile', JSON.stringify(userProfile));
+       alert('Profile saved!');
+       window.location.href = 'home.html'; // Redirect to main page after saving
+     });
+   
+     // Load saved profile
+     const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+     if (savedProfile) {
+       document.getElementById('name').value = savedProfile.name;
+       aboutInput.value = savedProfile.about || ''; // Load saved About text
+       aboutText.textContent = savedProfile.about || ''; // Display saved About text
+       displayName.textContent = savedProfile.name; // Set h5 text to name
+       if (savedProfile.profilePic) {
+         preview.src = savedProfile.profilePic;
+         preview.classList.remove('hidden');
+         deletePic.classList.remove('hidden');
+       }
+     }
+   
+     // Handle delete profile picture
+     deletePic.addEventListener('click', function () {
+       preview.src = '#';
+       preview.classList.add('hidden');
+       deletePic.classList.add('hidden');
+       profilePicInput.value = ''; // Clear the file input
+     });
+   
+     // Allow editing profile picture by clicking on the image
+     preview.addEventListener('click', function () {
+       profilePicInput.click();
+     });
+   });
+   
+   
+     </script>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+
+       if (savedProfile) {
+           // Update the profile section with profile data
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+
+           // Update the profile picture
+           if (savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+
+           // Update the name and about section
+           sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+       }
+   });
+</script>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+       // Load saved profile from localStorage
+       const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
+   
+       if (savedProfile) {
+           // Update the profile section in the sidebar
+           const sidebarProfilePic = document.getElementById('sidebarProfilePic');
+           const sidebarProfileName = document.getElementById('sidebarProfileName');
+           const sidebarAbout = document.getElementById('sidebarAbout');
+   
+           if (sidebarProfilePic && savedProfile.profilePic) {
+               sidebarProfilePic.src = savedProfile.profilePic;
+           }
+   
+           if (sidebarProfileName) {
+               sidebarProfileName.textContent = savedProfile.name || 'No Name Provided';
+           }
+   
+           if (sidebarAbout) {
+               sidebarAbout.textContent = savedProfile.about || 'No About Information Provided';
+           }
+   
+           // Update the main profile section
+           const profilePic = document.getElementById('profilePic');
+           const profileName = document.getElementById('profileName');
+           const profileRole = document.getElementById('profileRole');
+           const profileAbout = document.getElementById('profileAbout');
+   
+           if (profilePic && savedProfile.profilePic) {
+               profilePic.src = savedProfile.profilePic;
+           }
+   
+           if (profileName) {
+               profileName.textContent = savedProfile.name || 'No Name Provided';
+           }
+   
+           if (profileRole) {
+               profileRole.textContent = savedProfile.role || 'Student';
+           }
+   
+           if (profileAbout) {
+               profileAbout.textContent = savedProfile.about || 'No About Information Provided';
+           }
+       }
+   });
+   
+   
+   </script>
+</body>
+</html>
