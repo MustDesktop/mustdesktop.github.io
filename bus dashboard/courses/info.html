@@ -14,92 +14,7 @@
 
    <style>
      
-     :root{
-   --main-color:#ffd900;
-   --red:#e74c3c;
-   --orange:#f39c12;
-   --light-color:#000000;
-   --light-bg:#eee;
-   --black:#000000;
-   --white:#fff;
-   --border:.1rem solid rgba(0,0,0,.2);
-}
-      h1 {
-          text-align: center;
-          color: #333;
-      }
 
-      .navigation-buttons {
-          display: flex;
-          justify-content: center;
-          gap: 10px;
-          margin-bottom: 20px;
-      }
-
-      .navigation-buttons button {
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          background-color: var(--main-color);
-          color: #fff;
-          cursor: pointer;
-      }
-
-      .navigation-buttons button.active {
-          background-color: var(--main-color);
-      }
-
-      .view-selector {
-          display: flex;
-          justify-content: center;
-          margin-bottom: 20px;
-      }
-
-      .view-selector button {
-          padding: 10px 20px;
-          margin: 0 5px;
-          border: none;
-          border-radius: 5px;
-          background-color: var(--main-color);
-          color: #fff;
-          cursor: pointer;
-      }
-
-      .view-selector button.active {
-          background-color: var(--main-color);
-      }
-
-      .file-list, .file-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          max-width: 800px;
-          margin: 0 auto;
-      }
-
-      .file-grid {
-          flex-direction: row;
-          flex-wrap: wrap;
-      }
-
-      .file-item {
-          background-color: var(--white);
-          padding: 15px;
-          border-radius: 5px;
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-          text-align: center;
-      }
-
-      .file-item a {
-          text-decoration: none;
-          color: var(--main-color);
-          font-size: 16px;
-          display: block;
-      }
-
-      .file-item a:hover {
-          text-decoration: underline;
-      }
   </style>
 </head>
 <body>
@@ -127,7 +42,7 @@
         <img src="images/pic-1.jpg" class="image" alt="Profile Picture" id="sidebarProfilePic">
         <h3 class="name" id="sidebarProfileName">must Desktop</h3>
         <p class="role" id="sidebarAbout">studen</p>
-        <a href="../../profile.html" class="btn">View Profile</a>
+        <a href="profile.html" class="btn">View Profile</a>
         <div class="flex-btn">
 
          </div>
@@ -147,7 +62,7 @@
     <img src="images/default.jpg" id="profilePic" class="image" alt="Profile Picture">
     <h3 class="name" id="profileName">Default Name</h3>
     <p class="profileAbout" id="sidebarAbout"></p>
-    <a href="../../profile.html" class="btn">View Profile</a>
+    <a href="profile.html" class="btn">View Profile</a>
  </div>
 
  <nav class="navbar">

@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
 
 :root{
-   --main-color:#fdd318;
+  /* --main-color:#fdd318; */
+   --main-color:#575757;
    --red:#e74c3c;
    --orange:#f39c12;
    --light-color:#000000;
@@ -1604,5 +1605,80 @@ section{
 }
 
 
+h1 {
+   text-align: center;
+   color: #333;
+}
 
+.navigation-buttons {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+
+.navigation-buttons button {
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   background-color: var(--main-color);
+   color: #fff;
+   cursor: pointer;
+}
+
+.navigation-buttons button.active {
+   background-color: var(--main-color);
+}
+
+.view-selector {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 20px;
+}
+
+.view-selector button {
+   padding: 10px 20px;
+   margin: 0 5px;
+   border: none;
+   border-radius: 5px;
+   background-color: var(--main-color);
+   color: #fff;
+   cursor: pointer;
+}
+
+.view-selector button.active {
+   background-color: var(--main-color);
+}
+
+.file-list, .file-grid {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.file-grid {
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.file-item {
+   background-color: var(--white);
+   padding: 15px;
+   border-radius: 5px;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+   text-align: center;
+}
+
+.file-item a {
+   text-decoration: none;
+   color: var(--black);
+   font-size: 16px;
+   display: block;
+}
+
+.file-item a:hover {
+   text-decoration: underline;
+}
 

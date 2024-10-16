@@ -24,7 +24,7 @@ button {
 	word-break: break-word;
   }
   */
-
+/*
   :root{
 	--main-color:#fdd318;
 	--red:#e74c3c;
@@ -35,7 +35,7 @@ button {
 	--white:#ffffff;
 	--border:.1rem solid rgba(0, 0, 0, 0.2);
  }
-
+*/
   button { 
 	margin-top: 15px; 
 	padding: 12px 20px; 
