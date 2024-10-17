@@ -1682,3 +1682,19 @@ h1 {
    text-decoration: underline;
 }
 
+
+.erd{
+   transition: 1s;
+   padding: 15px;
+   display: block;
+   width: 100%;
+}
+
+.erd img:hover{
+   filter: grayscale(100%);
+   transform: scale(1.1);
+}
+
+h4{
+   color: var(--black);
+}
