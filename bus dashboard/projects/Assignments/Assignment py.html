@@ -92,7 +92,7 @@
          <video src="images/vid-1.mp4" controls poster="images/post-1-1.png" id="video"></video>
       </div> -->
       
-      <h3 class="title">Inf 303 Assignment</h3>
+      <h3 class="title">Inf 301 Assignment</h3>
       <div class="info">
         <!-- <p class="date"><i class="fas fa-calendar"></i><span>.</span></p>
          <p class="date"><i class="fas fa-heart"></i><span> .</span></p>  -->
@@ -107,7 +107,7 @@
 
   
       <form action="" method="post" class="flex">
-         <a href="assignments/Erd inf303.pdf" download="" class="inline-btn">Download Pdf</a>
+         <a href="assignments/Assignment.py" download="" class="inline-btn">Download Assignment</a>
         <!-- <button><i class="far fa-heart"></i><span>like</span></button> -->
       </form>
     <!--  <p class="description">
@@ -123,9 +123,52 @@
 
    <form action="" class="add-comment">
       <h3>Preview Assignment</h3>
-      <h4>Click on image to Preview</h4>
+      
+      <pre><code style="color: var(--black); font-size:large;">
+         # Initial order data
+order = {
+    'product': ['A', 'B', 'C', 'D', 'E'],
+    'Quantity': [2, 5, 7, 4, 3],
+    'price': [10, 8, 2, 12, 6]
+}
+# Step 1: Add G and H to the order
+order['product'].extend(['G'])
+order['Quantity'].extend([20])
+order['price'].extend([1])
+
+order['product'].insert(4, 'H')
+order['Quantity'].insert(4, 6)
+order['price'].insert(4, 9)
+
+# Step 2: Replace E and G with M, N, P
+A = order['product'].index('E')
+B = order['product'].index('G')
+
+# Modify based on index for replacement
+order['product'][A] = 'M'
+order['product'][B:] = ['N', 'P']
+order['Quantity'][A] = 3
+order['Quantity'][B:] = [5, 1]
+order['price'][A] = 10
+order['price'][B:] = [3, 7]
+
+# Step 3: Remove product C from the order
+order['product'].remove('C')
+order['Quantity'].remove(7)
+order['price'].remove(2)
+
+# Q2: Calculate the total price by summing the prices
+total_price = sum(order['price'])
+
+# Q1: Final order
+print("Final Order:")
+print(order)
+
+print("Total price of the final order:", total_price)
+
+      </code></pre>
     <!--  <textarea name="comment_box" placeholder="enter your comment"  cols="30" rows="10"></textarea> -->
-      <a href="assignments/erd.png" data-lightbox="erd" data-title="Erd system inf 303"><img src="erd.png"  class="erd"></a>
+    <!--  <a href="" data-lightbox="erd" data-title="Erd system inf 303"><img src="erd.png"  class="erd"></a> -->
 
     <!--  <input type="submit" value="add comment" class="inline-btn" name="add_comment"> -->
    </form>
