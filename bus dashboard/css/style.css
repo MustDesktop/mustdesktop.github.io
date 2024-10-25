@@ -28,6 +28,7 @@
    outline: none; border:none;
    text-decoration: none;
    cursor: url(mouse.cur), auto;
+   transition: all 0.4s ease;
 
 
 }
@@ -42,6 +43,7 @@
 html{
    font-size: 62.5%;
    overflow-x: hidden;
+   transition: all 0.4s ease;
 }
 
 html::-webkit-scrollbar{
@@ -60,6 +62,7 @@ html::-webkit-scrollbar-thumb{
 body{
    background-color: var(--light-bg);
    padding-left: 30rem;
+   transition: all 0.4s ease;s
 }
 
 body.dark{
@@ -79,12 +82,14 @@ body.dark{
 } */
 body.active{
    padding-left: 0;
+   transition: all 0.4s ease;
 }
 
 section{
    padding:2rem;
    margin: 0 auto;
    max-width: 1200px;
+   
 }
 
 .heading{
@@ -161,6 +166,7 @@ section{
    background-color: var(--white);
    z-index: 1000;
    border-bottom: var(--border);
+   transition: all 0.4s ease;
 }
 
 .header .flex{
@@ -169,6 +175,7 @@ section{
    justify-content: space-between; 
    position: relative;
    padding: 1.5rem 2rem;
+   transition: all 0.4s ease;
 }
 
 .header .flex .logo{
@@ -215,6 +222,8 @@ section{
    cursor: pointer;
    text-align: center;
    margin-left: .7rem;
+   transition: all 0.4s ease;
+   
 }
 
 .header .flex .icons div:hover{
@@ -273,6 +282,7 @@ section{
    height: 100vh;
    border-right: var(--border);
    z-index: 1200;
+   transition: all 0.4s ease;
 }
 
 .side-bar #close-btn{
@@ -993,12 +1003,14 @@ section{
    gap:1.5rem;
    justify-content: center;
    align-items: flex-start;
+   transition: all 0.4s ease;
 }
 
 .teachers .box-container .box{
    background-color: var(--white);
    border-radius: .5rem;
    padding: 2rem;
+   transition: all 0.4s ease;
 }
 
 .teachers .box-container .offer{
@@ -1541,6 +1553,7 @@ section{
    scale: 100%;
    object-fit: cover;
    border-radius: .5rem;
+   transition: all 0.4s ease;
 }
 
 .botun {
@@ -1553,6 +1566,7 @@ section{
    padding:1rem 3rem;
    text-align: center;
    margin-top: 1rem;
+   transition: all 0.4s ease;
 }
 
 .home-grid .box-container .Ads{
@@ -1560,6 +1574,7 @@ section{
    background-color: var(--white);
    border-radius: .5rem;
    padding:2rem;
+   transition: all 0.4s ease;
 }
 
 .home-grid .box-container .Ads .title{
@@ -1576,12 +1591,14 @@ section{
    justify-content: center;
    align-items: center;
    margin-bottom: 20px;
+   transition: all 0.4s ease;
 }
 
 .sort-container label {
    font-size: 16px;
    color: var(--black);
    margin-right: 10px;
+   transition: all 0.4s ease;
 }
 
 .sort-container select {
@@ -1592,16 +1609,19 @@ section{
    background-color: var(--white);
    color: var(--black);
    cursor: pointer;
+   transition: all 0.4s ease;
 }
 
 .sort-container select:focus {
    outline: none;
    border-color: var(--main-color);
+   transition: all 0.4s ease;
 }
 
 .sort-container select option {
    font-size: 16px;
    color: var(--black);
+   transition: all 0.4s ease;
 }
 
 
@@ -1615,6 +1635,7 @@ h1 {
    justify-content: center;
    gap: 10px;
    margin-bottom: 20px;
+   transition: all 0.4s ease;
 }
 
 .navigation-buttons button {
@@ -1656,11 +1677,13 @@ h1 {
    gap: 10px;
    max-width: 800px;
    margin: 0 auto;
+   transition: all 0.4s ease;
 }
 
 .file-grid {
    flex-direction: row;
    flex-wrap: wrap;
+   transition: all 0.4s ease;
 }
 
 .file-item {
@@ -1669,6 +1692,7 @@ h1 {
    border-radius: 5px;
    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
    text-align: center;
+   transition: all 0.4s ease;
 }
 
 .file-item a {
@@ -1676,6 +1700,7 @@ h1 {
    color: var(--black);
    font-size: 16px;
    display: block;
+   transition: all 0.4s ease;
 }
 
 .file-item a:hover {
@@ -1697,4 +1722,13 @@ h1 {
 
 h4{
    color: var(--black);
+}
+
+
+pre code{
+background-color: var(--light-bg);
+border: 1px solid  var(--light-border);
+display: block;
+padding: 10px;
+
 }
