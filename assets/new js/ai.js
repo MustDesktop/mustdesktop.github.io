@@ -27,3 +27,19 @@
             window.location.href = 
                 "ai.html";
         }
+        function Gemini() {
+            window.location.href = 
+                "https://gemini.google.com/";
+        }
+        function claude() {
+            window.location.href = 
+                "https://claude.ai/chat";
+        }
+        function Qwen() {
+            window.location.href = 
+                "https://chat.qwenlm.ai/";
+        }
+        function sider() {
+            window.location.href = 
+                "https://sider.ai/";
+        }
