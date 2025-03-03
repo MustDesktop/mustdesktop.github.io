@@ -42,7 +42,7 @@ button {
 	background-color: var(--main-color); 
 	color: #fff; 
 	border: none; 
-	border-radius: .5rem; 
+	border-radius: 2.5rem; 
 	cursor: pointer; 
 	font-size: 14px;
 	display: inline-block; 
@@ -59,7 +59,7 @@ select {
 	padding: 10px; 
 	margin-bottom: 15px; 
 	border: 1px solid #9c9c9c; 
-	border-radius: 5px; 
+	border-radius: 2.3rem; 
 	box-sizing: border-box; 
 	font-size: 14px; 
 } 
@@ -106,10 +106,11 @@ table {
 
 th, 
 td { 
-	border: 1px solid #000000; 
+	/* border: 1px solid var(--black);  */
 	padding: 8px; 
 	text-align: left; 
 	font-size: medium;
+	border-radius: 2.3rem;
 } 
 
 th { 
