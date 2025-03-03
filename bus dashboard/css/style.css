@@ -2,7 +2,7 @@
 
 :root{
   /* --main-color:#fdd318; */
-   --main-color:#575757;
+   --main-color:#ffc400;
    --red:#e74c3c;
    --orange:#f39c12;
    --light-color:#000000;
@@ -133,16 +133,22 @@ section{
 .btn,
 .inline-btn{
    background-color: var(--main-color);
+   color: var(--black);
+   border-radius: 2.3rem;
 }
 
 .option-btn,
 .inline-option-btn{
    background-color:var(--main-color);
+   color: var(--black);
+   border-radius: 2.3rem;
 }
 
 .delete-btn,
 .inline-delete-btn{
    background-color: var(--red);
+   color: var(--black);
+   border-radius: 2.3rem;
 }
 
 .inline-btn:hover,
@@ -153,6 +159,7 @@ section{
 .option-btn:hover{
    background-color: var(--black);
    color: var(--white);
+   border-radius: 2.3rem;
 }
 
 .flex-btn{
@@ -165,10 +172,36 @@ section{
    top:0; left:0; right: 0;
    background-color: var(--white);
    z-index: 1000;
-   border-bottom: var(--border);
+   /* border-bottom: var(--border); */
    transition: all 0.4s ease;
-}
 
+   
+
+}
+.header::before{
+   content: "";
+   position: absolute;
+   
+   background-color: transparent;
+   bottom: -50px;
+   height: 50px;
+   width: 25px;
+   border-top-left-radius: 25px;
+   box-shadow: 0 -25px 0 0 var(--white);
+
+}
+.header::after{
+   content: "";
+   position: absolute;
+   right: 0px;
+   bottom: 1px;
+   background-color: transparent;
+   bottom: -50px;
+   height: 50px;
+   width: 18px;
+   border-top-right-radius: 25px;
+   box-shadow: 0 -25px 0 0 var(--white);
+}
 .header .flex{
    display: flex;
    align-items: center;
@@ -177,6 +210,18 @@ section{
    padding: 1.5rem 2rem;
    transition: all 0.4s ease;
 }
+/* .header .flex::before{
+   content: "";
+   position: absolute;
+   right: 50px;
+   
+   background-color: transparent;
+   bottom: -50px;
+   height: 50px;
+   width: 25px;
+   border-top-right-radius: 25px;
+   box-shadow: 0 -25px 0 0 var(--white);
+} */
 
 .header .flex .logo{
    font-size: 2.5rem;
@@ -185,7 +230,7 @@ section{
 
 .header .flex .search-form{
    width: 50rem;
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    background-color: var(--light-bg);
    padding:1.5rem 2rem;
    display: flex;
@@ -280,7 +325,7 @@ section{
    width: 30rem;
    background-color: var(--white);
    height: 100vh;
-   border-right: var(--border);
+   /* border-right: var(--border); */
    z-index: 1200;
    transition: all 0.4s ease;
 }
@@ -372,7 +417,7 @@ section{
 
 .home-grid .box-container .box{
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding:2rem;
 }
 
@@ -391,7 +436,7 @@ section{
 
 .home-grid .box-container .flex a{
    background-color: var(--light-bg);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 1rem 1.5rem;
    font-size: 1.5rem;
 }
@@ -477,7 +522,7 @@ section{
 }
 
 .about .box-container .box{
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    background-color: var(--white);
    padding: 2rem;
    display: flex;
@@ -510,7 +555,7 @@ section{
 }
 
 .reviews .box-container .box{
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    background-color: var(--white);
    padding: 2rem;
 }
@@ -555,7 +600,7 @@ section{
 }
 
 .courses .box-container .box{
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    background-color: var(--white);
    padding: 2rem;
 }
@@ -683,7 +728,7 @@ section{
    height: 30rem;
    width: 100%;
    object-fit: cover;
-   border-radius: .5rem;
+   border-radius: 2.5rem;
 }
 
 .playlist-details .row .column .tutor{
@@ -734,7 +779,7 @@ section{
 
 .playlist-videos .box-container .box{
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 2rem;
    position: relative;
 }
@@ -743,7 +788,7 @@ section{
    position: absolute;
    top: 2rem; left: 2rem; right: 2rem;
    height: 20rem;
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    background-color: rgba(0,0,0,.3);
    display: flex;
    align-items: center;
@@ -761,7 +806,7 @@ section{
    width: 100%;
    height: 20rem;
    object-fit: cover;
-   border-radius: .5rem;
+   border-radius: 2.5rem;
 }
 
 .playlist-videos .box-container .box h3{
@@ -776,7 +821,7 @@ section{
 
 .watch-video .video-container{
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 2rem;
 }
 
@@ -786,7 +831,7 @@ section{
 }
 
 .watch-video .video-container .video video{
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    width: 100%;
    object-fit: contain;
    background-color: #000;
@@ -890,7 +935,7 @@ section{
 
 .comments .add-comment{
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 2rem;
    margin-bottom: 3rem;
 }
@@ -971,7 +1016,7 @@ section{
 
 .teachers .search-tutor{
    margin-bottom: 2rem;
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    background-color: var(--white);
    padding: 1.5rem 2rem;
    display: flex;
@@ -984,6 +1029,7 @@ section{
    background: none;
    font-size: 1.8rem;
    color: var(--black);
+   border-radius: 2.5rem;
 }
 
 .teachers .search-tutor button{
@@ -991,6 +1037,7 @@ section{
    color: var(--black);
    cursor: pointer;
    background:none;
+   border-radius: 2.5rem;
 }
 
 .teachers .search-tutor button:hover{
@@ -1008,7 +1055,7 @@ section{
 
 .teachers .box-container .box{
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 2rem;
    transition: all 0.4s ease;
 }
@@ -1275,7 +1322,7 @@ section{
 
 .form-container form{
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.3rem;
    padding: 2rem;
    width: 50rem;
 }
@@ -1314,17 +1361,48 @@ section{
 
 .footer{
    background-color: var(--white);
-   border-top: var(--border);
+   /* border-top: var(--border); */
    position: sticky;
    bottom: 0; left: 0; right: 0;
    text-align: center;
    font-size: 2rem;
    padding:2.5rem 2rem;
    color:var(--black);
-   margin-top: 1rem;
+   margin-top: 20rem;
    z-index: 1000;
    /* padding-bottom: 9.5rem; */
+   
 }
+.footer::before{
+   content: "";
+   position: absolute;
+  
+   background-color: transparent;
+   top: -45px;
+   left: 0px;
+   right: 0px;
+   height: 50px;
+   width: 40px;
+   rotate: z 270deg;
+   border-top-left-radius: 25px;
+   box-shadow: 0 -30px 0 0 var(--white);
+
+}
+/* .footer::after{
+   content: "";
+   position: absolute;
+  
+   background-color: transparent;
+   top: 45px;
+   left: 0px;
+   right: 0px;
+   height: 50px;
+   width: 40px;
+   rotate: z 90deg;
+   border-top-right-radius: 25px;
+   box-shadow: 0 -30px 0 0 var(--white);
+
+} */
 
 .footer span{
    color:var(--main-color);
@@ -1351,6 +1429,8 @@ section{
       left: 0;
       box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
       border-right: 0;
+      border-top-right-radius: 2.5rem;
+      border-bottom-right-radius: 2.5rem;
    }
 
 }
@@ -1558,7 +1638,7 @@ section{
 
 .botun {
    background-color: #0059ff;
-   border-radius: .6rem;
+   border-radius: 2.3rem;
    color:#fff;
    font-size: 1.8rem;
    cursor: pointer;
@@ -1572,7 +1652,7 @@ section{
 .home-grid .box-container .Ads{
    background-image: url('images/images/office.png');
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding:2rem;
    transition: all 0.4s ease;
 }
@@ -1641,7 +1721,7 @@ h1 {
 .navigation-buttons button {
    padding: 10px 20px;
    border: none;
-   border-radius: 5px;
+   border-radius: 2.5rem;
    background-color: var(--main-color);
    color: #fff;
    cursor: pointer;
@@ -1661,7 +1741,7 @@ h1 {
    padding: 10px 20px;
    margin: 0 5px;
    border: none;
-   border-radius: 5px;
+   border-radius: 2.5rem;
    background-color: var(--main-color);
    color: #fff;
    cursor: pointer;
@@ -1669,6 +1749,7 @@ h1 {
 
 .view-selector button.active {
    background-color: var(--main-color);
+
 }
 
 .file-list, .file-grid {
@@ -1689,7 +1770,7 @@ h1 {
 .file-item {
    background-color: var(--white);
    padding: 15px;
-   border-radius: 5px;
+   border-radius: 3rem;
    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
    text-align: center;
    transition: all 0.4s ease;
