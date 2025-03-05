@@ -62,14 +62,14 @@ html::-webkit-scrollbar-thumb{
 body{
    background-color: var(--light-bg);
    padding-left: 30rem;
-   transition: all 0.4s ease;s
+   transition: all 0.5s ease;
 }
 
 body.dark{
    --light-color:#ffffff;
-   --light-bg:#222222;
+   --white:#222222;
    --black:#fff;
-   --white:#0e0e0e;
+   --light-bg:#0e0e0e;
    --border:.1rem solid rgba(255,255,255,.2);
 }
 /*
@@ -260,7 +260,7 @@ section{
    font-size: 2rem;
    color:var(--black);
    background-color: var(--light-bg);
-   border-radius: .5rem;
+   border-radius: 1rem;
    height: 4.5rem;
    width: 4.5rem;
    line-height: 4.5rem;
@@ -280,13 +280,14 @@ section{
    position: absolute;
    top:120%; right: 2rem;
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 1.5rem;
    text-align: center;
    overflow: hidden;
    transform-origin: top right;
    transform: scale(0);
    transition: .2s linear;
+   transition: all 0.4s ease;
    width: 30rem;
 }
 
@@ -389,6 +390,8 @@ section{
    margin-right: 1.5rem;
    color:var(--main-color);
    transition: .2s linear;
+   transition: all 0.4s ease;
+
 }
 
 .side-bar .navbar a span{
@@ -898,7 +901,7 @@ section{
 }
 
 .watch-video .video-container .flex button{
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 1rem 1.5rem;
    font-size: 1.8rem;
    cursor: pointer;
@@ -1146,7 +1149,7 @@ section{
 
 .teacher-profile .details .flex p{
    flex: 1 1 20rem;
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    background-color: var(--light-bg);
    padding: 1.2rem 2rem;
    font-size: 1.8rem;
@@ -1159,7 +1162,7 @@ section{
 
 .user-profile .info{
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 2rem;
 }
 
@@ -1196,7 +1199,7 @@ section{
 
 .user-profile .info .box-container .box{
    background-color: var(--light-bg);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 2rem;
    flex: 1 1 25rem;
 }
@@ -1213,7 +1216,7 @@ section{
    color: var(--white);
    background-color: var(--black);
    text-align: center;
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    height: 5rem;
    width: 5rem;
    line-height: 4.9rem;
@@ -1260,7 +1263,7 @@ section{
 
 .contact .row form .box{
    width: 100%;
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    background-color: var(--light-bg);
    margin: 1rem 0;
    padding: 1.4rem;
@@ -1285,7 +1288,7 @@ section{
 .contact .box-container .box{
    text-align: center;
    background-color: var(--white);
-   border-radius: .5rem;
+   border-radius: 2.5rem;
    padding: 3rem;
 }
 
@@ -1419,6 +1422,8 @@ section{
    .side-bar{
       left: -30rem;
       transition: .2s linear;
+      transition: all 0.4s ease;
+
    }
 
    .side-bar #close-btn{
@@ -1431,6 +1436,8 @@ section{
       border-right: 0;
       border-top-right-radius: 2.5rem;
       border-bottom-right-radius: 2.5rem;
+      transition: all 0.4s ease;
+
    }
 
 }
@@ -1484,7 +1491,7 @@ section{
    }
 
    .about .row .image img{
-      height: 25rem;
+      /* height: 25rem; */
    }
 
 }
@@ -1535,6 +1542,8 @@ section{
    z-index: 1000;
    top: 100%; /* Position below the input field */
    left: 1rem; /* Align with input padding */
+      transition: all 0.4s ease;
+
 }
 
 .suggestions-list li {
@@ -1813,3 +1822,7 @@ display: block;
 padding: 10px;
 
 }
+
+
+
+/* nice */
