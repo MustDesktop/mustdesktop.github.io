@@ -62,7 +62,9 @@ html::-webkit-scrollbar-thumb{
 body{
    background-color: var(--light-bg);
    padding-left: 30rem;
+   
    transition: all 0.5s ease;
+   
 }
 
 body.dark{
@@ -1362,7 +1364,7 @@ section{
 
 
 
-.footer{
+.###@footer{
    background-color: var(--white);
    /* border-top: var(--border); */
    position: sticky;
@@ -1376,7 +1378,7 @@ section{
    /* padding-bottom: 9.5rem; */
    
 }
-.footer::before{
+/* .footer::before{
    content: "";
    position: absolute;
   
@@ -1390,7 +1392,7 @@ section{
    border-top-left-radius: 25px;
    box-shadow: 0 -30px 0 0 var(--white);
 
-}
+} */
 /* .footer::after{
    content: "";
    position: absolute;
@@ -1407,9 +1409,61 @@ section{
 
 } */
 
-.footer span{
+/* .footer span{
    color:var(--main-color);
+} */
+
+
+
+
+
+
+.footer {
+   background-color: var(--white);
+   position: sticky;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   text-align: center;
+   font-size: 2rem;
+   padding: 2.5rem 2rem;
+   color: var(--black);
+   margin-top: 2rem;
+   z-index: 1000;
 }
+
+.footer::before {
+   content: "";
+   position: absolute;
+   top: -50px;
+   left: 0;
+   background-color: transparent;
+   height: 50px;
+   width: 25px;
+   border-bottom-left-radius: 25px;
+   box-shadow: 0 25px 0 0 var(--white);
+}
+
+.footer::after {
+   content: "";
+   position: absolute;
+   top: -50px;
+   right: 0;
+   background-color: transparent;
+   height: 50px;
+   width: 25px;
+   border-bottom-right-radius: 25px;
+   box-shadow: 0 25px 0 0 var(--white);
+}
+
+.footer span {
+   color: var(--main-color);
+}
+
+.courses {
+   padding-bottom: 5rem; /* Add extra padding to the bottom of the courses section */
+}
+
 
 
 
@@ -1826,3 +1880,70 @@ padding: 10px;
 
 
 /* nice */
+
+
+
+
+.auth-container {
+   background-color: var(--white);
+   border-radius: 2.3rem;
+   padding: 2rem;
+   width: 50rem;
+   text-align: center;
+}
+
+.form-toggle {
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   margin-bottom: 2rem;
+}
+
+.form-toggle .inline-btn {
+   width: 50%;
+}
+
+.form-toggle .inline-btn.active {
+   background-color: var(--black);
+   color: var(--white);
+}
+
+.auth-form {
+   display: block;
+}
+
+.auth-form h3 {
+   font-size: 2.5rem;
+   color: var(--black);
+   text-transform: capitalize;
+   margin-bottom: 1rem;
+}
+
+.auth-form .box {
+   width: 100%;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding: 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   margin: 1rem 0;
+}
+
+.auth-form textarea.box {
+   height: 10rem;
+   resize: vertical;
+}
+
+.auth-form .toggle-text {
+   font-size: 1.7rem;
+   color: var(--light-color);
+   margin-top: 1rem;
+}
+
+.auth-form .toggle-text a {
+   color: var(--main-color);
+}
+
+.auth-form .toggle-text a:hover {
+   text-decoration: underline;
+}
