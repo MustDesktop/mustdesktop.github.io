@@ -43,3 +43,7 @@
             window.location.href = 
                 "https://sider.ai/";
         }
+                function MDAi() {
+            window.location.href = 
+                "https://mustdesktop.github.io/ai/MDAi";
+        }
