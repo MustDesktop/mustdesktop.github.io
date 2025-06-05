@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Must Desktop AI</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  <link rel="shortcut icon" href="assets/MustDesktop.ai.ico" type="image/x-icon">
+</head>
+<body oncontextmenu="return false;">
+    <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <!-- <i class="fas fa-robot"></i> -->
+         <img src="assets/MustDesktop.ai.png" class="mdai-logo" alt="MustDesktop AI Logo">
+        <h1>Must Desktop AI</h1>
+      </div>
+    </header>
+
+    <div class="chat-container">
+      <div class="messages" id="messages">
+        <div class="message bot">
+          <div class="avatar"><img src="assets/MDAI.png" class="mdai-logo" alt=""></div>
+          <div class="content">
+            <div class="typing-animation">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <div class="input-container">
+          <textarea 
+            id="message-input" 
+            placeholder="Message MDAi..." 
+            rows="1"
+          ></textarea>
+          <button id="send-btn" class="send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <div class="disclaimer">
+          MustDesktop AI can make mistakes. Verify important information.
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="assets/script.js"></script>
+<!-- Remove this entire script block -->
+<script>
+    // Basic protection against viewing source
+    document.onkeydown = function(e) {
+      if (e.key === "F12" || 
+          (e.ctrlKey && e.shiftKey && e.key === "I") || 
+          (e.ctrlKey && e.shiftKey && e.key === "J") || 
+          (e.ctrlKey && e.key === "U")) {
+        return false;
+      }
+    };
+  </script>
+</body>
+</html>
