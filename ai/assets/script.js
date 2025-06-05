@@ -7,8 +7,9 @@ const toast = document.getElementById('toast');
 // Embedded API Key (obfuscated)
 const apiKey = (() => {
   const parts = [
-    'sk-or-v1-f96f6d5852ad86e0c2052c6654bec533',
-    '06891b536596fad46f3fef71db541cf6'
+    // 'sk-or-v1-f96f6d5852ad86e0c2052c6654bec533',
+    // '06891b536596fad46f3fef71db541cf6'
+    '  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'
   ];
   return parts.join('');
 })();
