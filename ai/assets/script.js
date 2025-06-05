@@ -4,13 +4,20 @@ const messageInput = document.getElementById('message-input');
 const sendBtn = document.getElementById('send-btn');
 const toast = document.getElementById('toast');
 
-// Embedded API Key (obfuscated)
+// // Embedded API Key (obfuscated)
+// const apiKey = (() => {
+//   const parts = [
+//     // 'sk-or-v1-f96f6d5852ad86e0c2052c6654bec533',
+//     // '06891b536596fad46f3fef71db541cf6'
+
+//        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
+//   ];
+//   return parts.join('');
+// })();
 const apiKey = (() => {
   const parts = [
-    // 'sk-or-v1-f96f6d5852ad86e0c2052c6654bec533',
-    // '06891b536596fad46f3fef71db541cf6'
-    'sk-or-v1-56d7343597755a3b2894409811',
-    '08715ae0ad1be4bf649883701aa8c1a49ddbf5'
+    'sk-or-v1-cd1055711755787d93d55e84f46bb14',
+    '5eee3d8ef9b4426fa5426d55efd727ac5'
   ];
   return parts.join('');
 })();
