@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Configuration
     // IMPORTANT: Replace 'YOUR_NEW_OPENROUTER_API_KEY_HERE' with your actual, valid API key.
-    const API_KEY = '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';
+    const API_KEY = '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';
     const MODEL = 'qwen/qwen3-30b-a3b:free';
     // const MODEL = 'openai/gpt-oss-20b:free';
     
@@ -350,7 +350,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: {
                     'Authorization': `Bearer ${API_KEY}`,
                     'Content-Type': 'application/json',
-                    'HTTP-Referer': window.location.href,
+                    'HTTP-Referer': 'https://mustdesktop.github.io/ai/MDAi',
+                    // 'HTTP-Referer': window.location.href,
                     'X-Title': 'Must Desktop AI'
                 },
                 body: JSON.stringify({
@@ -501,4 +502,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial focus
     messageInput.focus();
 });
+
 ````
