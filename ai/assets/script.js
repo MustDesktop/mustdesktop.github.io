@@ -412,7 +412,7 @@ async function sendMessage() {
         'X-Title': 'MDAi Chat'
       },
       body: JSON.stringify({
-        model: 'openai/gpt-oss-20b:free',
+        model: 'google/gemma-3n-e2b-it:free',
         messages: [{ role: 'user', content: message }],
         temperature: 0.7,
         max_tokens: 1000
@@ -450,6 +450,7 @@ messageInput.addEventListener('input', function() {
 
 // Initialize the chat
 init();
+
 
 
 
