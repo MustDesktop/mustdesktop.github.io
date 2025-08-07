@@ -16,12 +16,8 @@
 // // })();
 // const apiKey = (() => {
 //   const parts = [
-//     'sk-or-v1-92774a9ece75d94573fd4a307d8d6b0',
-//     '5ff2372ad2c595a45821314f098856e7b'
-//     // 'sk-or-v1-087891a8aa3bf60fcd14b98182b82a4',
-//     // '4325a64bef1d784e7e12ff70e5d3cf40e'
-//     // 'sk-or-v1-cd1055711755787d93d55e84f46bb14',
-//     // '5eee3d8ef9b4426fa5426d55efd727ac5'
+//     'sk-or-v1-cd1055711755787d93d55e84f46bb14',
+//     '5eee3d8ef9b4426fa5426d55efd727ac5'
 //   ];
 //   return parts.join('');
 // })();
@@ -250,8 +246,7 @@
 //           'Authorization': `Bearer ${apiKey}`
 //         },
 //         body: JSON.stringify({
-//           model: 'openai/gpt-oss-20b:free',
-//           // model: 'deepseek/deepseek-r1:free',
+//           model: 'deepseek/deepseek-r1:free',
 //           messages: [{ role: 'user', content: message }],
 //           temperature: 0.7,
 //           max_tokens: 1000
@@ -285,9 +280,7 @@
 //   this.style.height = (this.scrollHeight) + 'px';
 // });
 
-
 // init();
-
 
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
@@ -299,8 +292,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Configuration
     // IMPORTANT: Replace 'YOUR_NEW_OPENROUTER_API_KEY_HERE' with your actual, valid API key.
-    const API_KEY = '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';
-    const MODEL = 'openai/gpt-oss-20b:free';
+    const API_KEY = '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';
+    const MODEL = 'qwen/qwen3-30b-a3b:free';
     // const MODEL = 'openai/gpt-oss-20b:free';
     
     // Conversation history
@@ -508,8 +501,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial focus
     messageInput.focus();
 });
-
-
-
-
-
+````
