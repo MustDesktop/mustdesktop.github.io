@@ -1,37 +1,306 @@
+// // DOM Elements
+// const messagesContainer = document.getElementById('messages');
+// const messageInput = document.getElementById('message-input');
+// const sendBtn = document.getElementById('send-btn');
+// const toast = document.getElementById('toast');
+
+// // // Embedded API Key (obfuscated)
+// // const apiKey = (() => {
+// //   const parts = [
+// //     // 'sk-or-v1-f96f6d5852ad86e0c2052c6654bec533',
+// //     // '06891b536596fad46f3fef71db541cf6'
+
+// //        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
+// //   ];
+// //   return parts.join('');
+// // })();
+// const apiKey = (() => {
+//   const parts = [
+//     'sk-or-v1-92774a9ece75d94573fd4a307d8d6b0',
+//     '5ff2372ad2c595a45821314f098856e7b'
+//     // 'sk-or-v1-087891a8aa3bf60fcd14b98182b82a4',
+//     // '4325a64bef1d784e7e12ff70e5d3cf40e'
+//     // 'sk-or-v1-cd1055711755787d93d55e84f46bb14',
+//     // '5eee3d8ef9b4426fa5426d55efd727ac5'
+//   ];
+//   return parts.join('');
+// })();
+
+// // Initialize
+// function init() {
+//   messageInput.focus();
+  
+//   setTimeout(() => {
+//     addMessage('Hello! I\'m MDAi . How can I assist you today?', 'bot');
+//   }, 1000);
+// }
+
+// // Event Listeners
+// sendBtn.addEventListener('click', sendMessage);
+// messageInput.addEventListener('keydown', (e) => {
+//   if (e.key === 'Enter' && !e.shiftKey) {
+//     e.preventDefault();
+//     sendMessage();
+//   }
+// });
+
+// // // Functions
+// // function addMessage(content, sender) {
+// //   const messageDiv = document.createElement('div');
+// //   messageDiv.className = `message ${sender}`;
+  
+// //   const avatar = document.createElement('div');
+// //   avatar.className = 'avatar';
+// //   avatar.innerHTML = sender === 'bot' ? 
+// //     // '<i class="fas fa-robot"></i>' : 
+// //     ' <img src="assets/MDAI.png" class="mdai-logo" alt="MustDesktop AI Logo">' : 
+// //     '<i class="fas fa-user"></i>';
+  
+// //   const contentDiv = document.createElement('div');
+// //   contentDiv.className = 'content';
+  
+// //   if (sender === 'bot' && content === '...') {
+// //     const typingDiv = document.createElement('div');
+// //     typingDiv.className = 'typing-animation';
+// //     typingDiv.innerHTML = `
+// //       <div class="dot"></div>
+// //       <div class="dot"></div>
+// //       <div class="dot"></div>
+// //     `;
+// //     contentDiv.appendChild(typingDiv);
+// //   } else {
+// //     // Check if content contains code blocks
+// //     if (content.includes('```')) {
+// //       const formattedContent = formatCodeBlocks(content);
+// //       contentDiv.innerHTML = formattedContent;
+// //       // Highlight all code blocks
+// //       contentDiv.querySelectorAll('pre code').forEach((block) => {
+// //         hljs.highlightElement(block);
+// //       });
+// //     } else {
+// //       contentDiv.textContent = content;
+// //     }
+// //   }
+  
+// //   messageDiv.appendChild(avatar);
+// //   messageDiv.appendChild(contentDiv);
+// //   messagesContainer.appendChild(messageDiv);
+  
+// //   messagesContainer.scrollTop = messagesContainer.scrollHeight;
+// // }
+
+// // function formatCodeBlocks(text) {
+// //   // Replace code blocks with proper HTML
+// //   return text.replace(/```(\w*)([\s\S]*?)```/g, function(match, language, code) {
+// //     language = language || 'plaintext';
+// //     return `<pre><code class="language-${language}">${code.trim()}</code></pre>`;
+// //   });
+// // }
+// function addMessage(content, sender) {
+//     const messageDiv = document.createElement('div');
+//     messageDiv.className = `message ${sender}`;
+    
+//     const avatar = document.createElement('div');
+//     avatar.className = 'avatar';
+//     avatar.innerHTML = sender === 'bot' ? 
+//       '<img src="assets/MDAI.png" class="mdai-logo" alt="MustDesktop AI Logo">' : 
+//       '<i class="fas fa-user"></i>';
+    
+//     const contentDiv = document.createElement('div');
+//     contentDiv.className = 'content';
+    
+//     if (sender === 'bot' && content === '...') {
+//       const typingDiv = document.createElement('div');
+//       typingDiv.className = 'typing-animation';
+//       typingDiv.innerHTML = `
+//         <div class="dot"></div>
+//         <div class="dot"></div>
+//         <div class="dot"></div>
+//       `;
+//       contentDiv.appendChild(typingDiv);
+//     } else {
+//       // Format the content with paragraphs and code blocks
+//       const formattedContent = formatMessageContent(content);
+//       contentDiv.innerHTML = formattedContent;
+      
+//       // Highlight all code blocks
+//       contentDiv.querySelectorAll('pre code').forEach((block) => {
+//         hljs.highlightElement(block);
+//       });
+//     }
+    
+//     messageDiv.appendChild(avatar);
+//     messageDiv.appendChild(contentDiv);
+//     messagesContainer.appendChild(messageDiv);
+    
+//     messagesContainer.scrollTop = messagesContainer.scrollHeight;
+//   }
+  
+//   function formatMessageContent(text) {
+//     // First handle code blocks
+//     let formatted = text.replace(/```(\w*)([\s\S]*?)```/g, function(match, language, code) {
+//       language = language || 'plaintext';
+//       return `<pre><code class="language-${language}">${code.trim()}</code></pre>`;
+//     });
+  
+//     // Then handle paragraphs (double newlines)
+//     formatted = formatted.replace(/\n\n/g, '</p><p>');
+    
+//     // Then handle single newlines (convert to <br>)
+//     formatted = formatted.replace(/\n(?!\n)/g, '<br>');
+    
+//     // Wrap in paragraph tags if there's any content
+//     if (formatted.trim().length > 0 && !formatted.startsWith('<p>')) {
+//       formatted = `<p>${formatted}</p>`;
+//     }
+  
+//     return formatted;
+//   }
+// function showToast(message, isError = false) {
+//   toast.textContent = message;
+//   toast.className = isError ? 'toast error' : 'toast success';
+//   toast.classList.add('show');
+  
+//   setTimeout(() => {
+//     toast.classList.remove('show');
+//   }, 3000);
+// }
+
+// // async function sendMessage() {
+// //   const message = messageInput.value.trim();
+  
+// //   if (!message) return;
+  
+// //   addMessage(message, 'user');
+// //   messageInput.value = '';
+// //   addMessage('...', 'bot');
+  
+// //   try {
+// //     messageInput.disabled = true;
+// //     sendBtn.disabled = true;
+    
+// //     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+// //       method: 'POST',
+// //       headers: {
+// //         'Content-Type': 'application/json',
+// //         'Authorization': `Bearer ${apiKey}`
+// //       },
+// //       body: JSON.stringify({
+// //         model: 'deepseek/deepseek-r1:free',
+// //         messages: [{ role: 'user', content: message }],
+// //         temperature: 0.7,
+// //         max_tokens: 1000
+// //       })
+// //     });
+    
+// //     if (!response.ok) {
+// //       throw new Error(`API error: ${response.status}`);
+// //     }
+    
+// //     const data = await response.json();
+// //     const botResponse = data.choices[0].message.content;
+    
+// //     messagesContainer.removeChild(messagesContainer.lastChild);
+// //     addMessage(botResponse, 'bot');
+    
+// //   } catch (error) {
+// //     console.error('Error:', error);
+// //     messagesContainer.removeChild(messagesContainer.lastChild);
+// //     addMessage('Sorry, I encountered an error. Please try again.', 'bot');
+// //     showToast(`Error: ${error.message}`, true);
+// //   } finally {
+// //     messageInput.disabled = false;
+// //     sendBtn.disabled = false;
+// //     messageInput.focus();
+// //   }
+// // }
+// async function sendMessage() {
+//     const message = messageInput.value.trim();
+    
+//     if (!message) return;
+    
+//     addMessage(message, 'user');
+//     messageInput.value = '';
+//     addMessage('...', 'bot');
+    
+//     try {
+//       messageInput.disabled = true;
+//       sendBtn.disabled = true;
+      
+//       // Special case for name questions
+//     //   if (message.toLowerCase().includes('your name') || 
+//     //       message.toLowerCase().includes('who are you') ||
+//     //       message.toLowerCase().includes('whats your name')) {
+
+//     //     messagesContainer.removeChild(messagesContainer.lastChild);
+//     //     addMessage('I am MDAi, an Must Desktop Ai.', 'A i');
+//     //     return;
+//     //   }
+//     if (message.toLowerCase().includes('your name') || 
+//     message.toLowerCase().includes('who are you') ||
+//     message.toLowerCase().includes('whats your name')) {
+//   messagesContainer.removeChild(messagesContainer.lastChild);
+//   addMessage('I am <strong>MDAi</strong>, an AI assistant created by MustDesktop.', 'bot');
+//   return;
+// }
+//       const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'Authorization': `Bearer ${apiKey}`
+//         },
+//         body: JSON.stringify({
+//           model: 'openai/gpt-oss-20b:free',
+//           // model: 'deepseek/deepseek-r1:free',
+//           messages: [{ role: 'user', content: message }],
+//           temperature: 0.7,
+//           max_tokens: 1000
+//         })
+//       });
+      
+//       if (!response.ok) {
+//         throw new Error(`API error: ${response.status}`);
+//       }
+      
+//       const data = await response.json();
+//       const botResponse = data.choices[0].message.content;
+      
+//       messagesContainer.removeChild(messagesContainer.lastChild);
+//       addMessage(botResponse, 'bot');
+      
+//     } catch (error) {
+//       console.error('Error:', error);
+//       messagesContainer.removeChild(messagesContainer.lastChild);
+//       addMessage('Sorry, I encountered an error. Please try again.', 'bot');
+//       showToast(`Error: ${error.message}`, true);
+//     } finally {
+//       messageInput.disabled = false;
+//       sendBtn.disabled = false;
+//       messageInput.focus();
+//     }
+//   }
+// // Auto-resize textarea
+// messageInput.addEventListener('input', function() {
+//   this.style.height = 'auto';
+//   this.style.height = (this.scrollHeight) + 'px';
+// });
+
+
+// init();
+
+
 // DOM Elements
 const messagesContainer = document.getElementById('messages');
 const messageInput = document.getElementById('message-input');
 const sendBtn = document.getElementById('send-btn');
 const toast = document.getElementById('toast');
 
-// // Embedded API Key (obfuscated)
-// const apiKey = (() => {
-//   const parts = [
-//     // 'sk-or-v1-f96f6d5852ad86e0c2052c6654bec533',
-//     // '06891b536596fad46f3fef71db541cf6'
-
-//        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
-//   ];
-//   return parts.join('');
-// })();
-const apiKey = (() => {
-  const parts = [
-    'sk-or-v1-92774a9ece75d94573fd4a307d8d6b0',
-    '5ff2372ad2c595a45821314f098856e7b'
-    // 'sk-or-v1-087891a8aa3bf60fcd14b98182b82a4',
-    // '4325a64bef1d784e7e12ff70e5d3cf40e'
-    // 'sk-or-v1-cd1055711755787d93d55e84f46bb14',
-    // '5eee3d8ef9b4426fa5426d55efd727ac5'
-  ];
-  return parts.join('');
-})();
-
 // Initialize
 function init() {
   messageInput.focus();
   
   setTimeout(() => {
-    addMessage('Hello! I\'m MDAi . How can I assist you today?', 'bot');
+    addMessage('Hello! I\'m MDAi. How can I assist you today?', 'bot');
   }, 1000);
 }
 
@@ -44,118 +313,61 @@ messageInput.addEventListener('keydown', (e) => {
   }
 });
 
-// // Functions
-// function addMessage(content, sender) {
-//   const messageDiv = document.createElement('div');
-//   messageDiv.className = `message ${sender}`;
-  
-//   const avatar = document.createElement('div');
-//   avatar.className = 'avatar';
-//   avatar.innerHTML = sender === 'bot' ? 
-//     // '<i class="fas fa-robot"></i>' : 
-//     ' <img src="assets/MDAI.png" class="mdai-logo" alt="MustDesktop AI Logo">' : 
-//     '<i class="fas fa-user"></i>';
-  
-//   const contentDiv = document.createElement('div');
-//   contentDiv.className = 'content';
-  
-//   if (sender === 'bot' && content === '...') {
-//     const typingDiv = document.createElement('div');
-//     typingDiv.className = 'typing-animation';
-//     typingDiv.innerHTML = `
-//       <div class="dot"></div>
-//       <div class="dot"></div>
-//       <div class="dot"></div>
-//     `;
-//     contentDiv.appendChild(typingDiv);
-//   } else {
-//     // Check if content contains code blocks
-//     if (content.includes('```')) {
-//       const formattedContent = formatCodeBlocks(content);
-//       contentDiv.innerHTML = formattedContent;
-//       // Highlight all code blocks
-//       contentDiv.querySelectorAll('pre code').forEach((block) => {
-//         hljs.highlightElement(block);
-//       });
-//     } else {
-//       contentDiv.textContent = content;
-//     }
-//   }
-  
-//   messageDiv.appendChild(avatar);
-//   messageDiv.appendChild(contentDiv);
-//   messagesContainer.appendChild(messageDiv);
-  
-//   messagesContainer.scrollTop = messagesContainer.scrollHeight;
-// }
-
-// function formatCodeBlocks(text) {
-//   // Replace code blocks with proper HTML
-//   return text.replace(/```(\w*)([\s\S]*?)```/g, function(match, language, code) {
-//     language = language || 'plaintext';
-//     return `<pre><code class="language-${language}">${code.trim()}</code></pre>`;
-//   });
-// }
+// Message Functions
 function addMessage(content, sender) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${sender}`;
-    
-    const avatar = document.createElement('div');
-    avatar.className = 'avatar';
-    avatar.innerHTML = sender === 'bot' ? 
-      '<img src="assets/MDAI.png" class="mdai-logo" alt="MustDesktop AI Logo">' : 
-      '<i class="fas fa-user"></i>';
-    
-    const contentDiv = document.createElement('div');
-    contentDiv.className = 'content';
-    
-    if (sender === 'bot' && content === '...') {
-      const typingDiv = document.createElement('div');
-      typingDiv.className = 'typing-animation';
-      typingDiv.innerHTML = `
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      `;
-      contentDiv.appendChild(typingDiv);
-    } else {
-      // Format the content with paragraphs and code blocks
-      const formattedContent = formatMessageContent(content);
-      contentDiv.innerHTML = formattedContent;
-      
-      // Highlight all code blocks
-      contentDiv.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightElement(block);
-      });
-    }
-    
-    messageDiv.appendChild(avatar);
-    messageDiv.appendChild(contentDiv);
-    messagesContainer.appendChild(messageDiv);
-    
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }
+  const messageDiv = document.createElement('div');
+  messageDiv.className = `message ${sender}`;
   
-  function formatMessageContent(text) {
-    // First handle code blocks
-    let formatted = text.replace(/```(\w*)([\s\S]*?)```/g, function(match, language, code) {
-      language = language || 'plaintext';
-      return `<pre><code class="language-${language}">${code.trim()}</code></pre>`;
+  const avatar = document.createElement('div');
+  avatar.className = 'avatar';
+  avatar.innerHTML = sender === 'bot' ? 
+    '<img src="assets/MDAI.png" class="mdai-logo" alt="MustDesktop AI Logo">' : 
+    '<i class="fas fa-user"></i>';
+  
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'content';
+  
+  if (sender === 'bot' && content === '...') {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'typing-animation';
+    typingDiv.innerHTML = `
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    `;
+    contentDiv.appendChild(typingDiv);
+  } else {
+    const formattedContent = formatMessageContent(content);
+    contentDiv.innerHTML = formattedContent;
+    
+    contentDiv.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
     });
-  
-    // Then handle paragraphs (double newlines)
-    formatted = formatted.replace(/\n\n/g, '</p><p>');
-    
-    // Then handle single newlines (convert to <br>)
-    formatted = formatted.replace(/\n(?!\n)/g, '<br>');
-    
-    // Wrap in paragraph tags if there's any content
-    if (formatted.trim().length > 0 && !formatted.startsWith('<p>')) {
-      formatted = `<p>${formatted}</p>`;
-    }
-  
-    return formatted;
   }
+  
+  messageDiv.appendChild(avatar);
+  messageDiv.appendChild(contentDiv);
+  messagesContainer.appendChild(messageDiv);
+  
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+function formatMessageContent(text) {
+  let formatted = text.replace(/```(\w*)([\s\S]*?)```/g, function(match, language, code) {
+    language = language || 'plaintext';
+    return `<pre><code class="language-${language}">${code.trim()}</code></pre>`;
+  });
+
+  formatted = formatted.replace(/\n\n/g, '</p><p>');
+  formatted = formatted.replace(/\n(?!\n)/g, '<br>');
+  
+  if (formatted.trim().length > 0 && !formatted.startsWith('<p>')) {
+    formatted = `<p>${formatted}</p>`;
+  }
+
+  return formatted;
+}
+
 function showToast(message, isError = false) {
   toast.textContent = message;
   toast.className = isError ? 'toast error' : 'toast success';
@@ -166,126 +378,78 @@ function showToast(message, isError = false) {
   }, 3000);
 }
 
-// async function sendMessage() {
-//   const message = messageInput.value.trim();
-  
-//   if (!message) return;
-  
-//   addMessage(message, 'user');
-//   messageInput.value = '';
-//   addMessage('...', 'bot');
-  
-//   try {
-//     messageInput.disabled = true;
-//     sendBtn.disabled = true;
-    
-//     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Authorization': `Bearer ${apiKey}`
-//       },
-//       body: JSON.stringify({
-//         model: 'deepseek/deepseek-r1:free',
-//         messages: [{ role: 'user', content: message }],
-//         temperature: 0.7,
-//         max_tokens: 1000
-//       })
-//     });
-    
-//     if (!response.ok) {
-//       throw new Error(`API error: ${response.status}`);
-//     }
-    
-//     const data = await response.json();
-//     const botResponse = data.choices[0].message.content;
-    
-//     messagesContainer.removeChild(messagesContainer.lastChild);
-//     addMessage(botResponse, 'bot');
-    
-//   } catch (error) {
-//     console.error('Error:', error);
-//     messagesContainer.removeChild(messagesContainer.lastChild);
-//     addMessage('Sorry, I encountered an error. Please try again.', 'bot');
-//     showToast(`Error: ${error.message}`, true);
-//   } finally {
-//     messageInput.disabled = false;
-//     sendBtn.disabled = false;
-//     messageInput.focus();
-//   }
-// }
+// API Communication
 async function sendMessage() {
-    const message = messageInput.value.trim();
+  const message = messageInput.value.trim();
+  
+  if (!message) return;
+  
+  addMessage(message, 'user');
+  messageInput.value = '';
+  addMessage('...', 'bot');
+  
+  try {
+    messageInput.disabled = true;
+    sendBtn.disabled = true;
     
-    if (!message) return;
-    
-    addMessage(message, 'user');
-    messageInput.value = '';
-    addMessage('...', 'bot');
-    
-    try {
-      messageInput.disabled = true;
-      sendBtn.disabled = true;
-      
-      // Special case for name questions
-    //   if (message.toLowerCase().includes('your name') || 
-    //       message.toLowerCase().includes('who are you') ||
-    //       message.toLowerCase().includes('whats your name')) {
-
-    //     messagesContainer.removeChild(messagesContainer.lastChild);
-    //     addMessage('I am MDAi, an Must Desktop Ai.', 'A i');
-    //     return;
-    //   }
     if (message.toLowerCase().includes('your name') || 
-    message.toLowerCase().includes('who are you') ||
-    message.toLowerCase().includes('whats your name')) {
-  messagesContainer.removeChild(messagesContainer.lastChild);
-  addMessage('I am <strong>MDAi</strong>, an AI assistant created by MustDesktop.', 'bot');
-  return;
-}
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-          model: 'openai/gpt-oss-20b:free',
-          // model: 'deepseek/deepseek-r1:free',
-          messages: [{ role: 'user', content: message }],
-          temperature: 0.7,
-          max_tokens: 1000
-        })
-      });
-      
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      const botResponse = data.choices[0].message.content;
-      
+        message.toLowerCase().includes('who are you') ||
+        message.toLowerCase().includes('whats your name')) {
       messagesContainer.removeChild(messagesContainer.lastChild);
-      addMessage(botResponse, 'bot');
-      
-    } catch (error) {
-      console.error('Error:', error);
-      messagesContainer.removeChild(messagesContainer.lastChild);
-      addMessage('Sorry, I encountered an error. Please try again.', 'bot');
-      showToast(`Error: ${error.message}`, true);
-    } finally {
-      messageInput.disabled = false;
-      sendBtn.disabled = false;
-      messageInput.focus();
+      addMessage('I am <strong>MDAi</strong>, an AI assistant created by MustDesktop.', 'bot');
+      return;
     }
+
+    // Replace with your actual API key (store securely in production)
+    const apiKey = '5ff2372ad2c595a45821314f098856e7b'; 
+    
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+        'HTTP-Referer': window.location.href,
+        'X-Title': 'MDAi Chat'
+      },
+      body: JSON.stringify({
+        model: 'openai/gpt-oss-20b:free',
+        messages: [{ role: 'user', content: message }],
+        temperature: 0.7,
+        max_tokens: 1000
+      })
+    });
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error?.message || `API error: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    const botResponse = data.choices[0].message.content;
+    
+    messagesContainer.removeChild(messagesContainer.lastChild);
+    addMessage(botResponse, 'bot');
+    
+  } catch (error) {
+    console.error('Error:', error);
+    messagesContainer.removeChild(messagesContainer.lastChild);
+    addMessage('Sorry, I encountered an error. Please try again later.', 'bot');
+    showToast(`Error: ${error.message}`, true);
+  } finally {
+    messageInput.disabled = false;
+    sendBtn.disabled = false;
+    messageInput.focus();
   }
+}
+
 // Auto-resize textarea
 messageInput.addEventListener('input', function() {
   this.style.height = 'auto';
   this.style.height = (this.scrollHeight) + 'px';
 });
 
-
+// Initialize the chat
 init();
+
 
 
