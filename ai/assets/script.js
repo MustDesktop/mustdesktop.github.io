@@ -246,7 +246,8 @@ async function sendMessage() {
           'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-          model: 'deepseek/deepseek-r1:free',
+          model: 'openai/gpt-oss-20b:free',
+          // model: 'deepseek/deepseek-r1:free',
           messages: [{ role: 'user', content: message }],
           temperature: 0.7,
           max_tokens: 1000
@@ -279,5 +280,6 @@ messageInput.addEventListener('input', function() {
   this.style.height = 'auto';
   this.style.height = (this.scrollHeight) + 'px';
 });
+
 
 init();
