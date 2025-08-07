@@ -401,7 +401,7 @@ async function sendMessage() {
     }
 
     // Replace with your actual API key (store securely in production)
-    const apiKey = '5ff2372ad2c595a45821314f098856e7b'; 
+    const apiKey = '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'; 
     
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
@@ -450,6 +450,7 @@ messageInput.addEventListener('input', function() {
 
 // Initialize the chat
 init();
+
 
 
 
