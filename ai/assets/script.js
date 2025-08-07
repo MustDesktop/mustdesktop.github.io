@@ -16,8 +16,10 @@ const toast = document.getElementById('toast');
 // })();
 const apiKey = (() => {
   const parts = [
-    'sk-or-v1-087891a8aa3bf60fcd14b98182b82a4',
-    '4325a64bef1d784e7e12ff70e5d3cf40e'
+    'sk-or-v1-92774a9ece75d94573fd4a307d8d6b0',
+    '5ff2372ad2c595a45821314f098856e7b'
+    // 'sk-or-v1-087891a8aa3bf60fcd14b98182b82a4',
+    // '4325a64bef1d784e7e12ff70e5d3cf40e'
     // 'sk-or-v1-cd1055711755787d93d55e84f46bb14',
     // '5eee3d8ef9b4426fa5426d55efd727ac5'
   ];
@@ -285,4 +287,5 @@ messageInput.addEventListener('input', function() {
 
 
 init();
+
 
