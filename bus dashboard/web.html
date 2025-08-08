@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Craft</title>
+    <link rel="stylesheet" href="projects/style.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Add JSZip for export functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- Add RequireJS for Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+    <script src="projects/monaco-loader.js"></script>
+    <script src="projects/snippets.js"></script>
+    <script src="projects/script.js"></script>
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <!-- <i class="fas fa-code"></i>
+                <span style="font-weight: bolder;">CodeCarft</span> -->
+                   <div class="typewriter">
+      <h1 style="font-size: x-large; color: white;">Code</h1>
+   <h1 style="font-size: x-large; color: white;">craft</h1>
+    </div>
+            </div>
+            <div class="controls">
+                <button class="btn run-btn" id="run-btn">
+                    <i class="fas fa-play"></i>
+                    <span>Run</span>
+                </button>
+                <button class="btn" id="export-project">
+                    <i class="fas fa-download"></i>
+                    <span>Export</span>
+                </button>
+                <button class="btn" id="snippets-btn">
+                    <i class="fas fa-code"></i>
+                    <span>Snippets</span>
+                </button>
+                <button class="btn" id="settings-btn">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+                <button class="btn" id="new-file">
+                    <i class="fas fa-file"></i>
+                    <span>New File</span>
+                </button>
+                <button class="btn" id="upload-file">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <div class="sidebar">
+                <div class="file-explorer">
+                    <div class="file-explorer-header">
+                        <span>EXPLORER</span>
+                        <button class="icon-btn" id="new-file-sidebar">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="file-tree" id="file-tree">
+                        <div class="file-item" data-file="index.html">
+                            <i class="fab fa-html5"></i>
+                            <span>index.html</span>
+                        </div>
+                        <div class="file-item" data-file="style.css">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>style.css</span>
+                        </div>
+                        <div class="file-item" data-file="script.js">
+                            <i class="fab fa-js"></i>
+                            <span>script.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-container">
+                <div class="editor-tabs" id="editor-tabs">
+                    <div class="tab active" data-tab="index.html">
+                        <i class="fab fa-html5"></i>
+                        <span>index.html</span>
+                        <button class="close-tab">&times;</button>
+                    </div>
+                </div>
+                <div class="editor-content" id="editor-content">
+                    <!-- Monaco Editors will be inserted here -->
+                </div>
+            </div>
+
+            <div class="resizer" id="resizer"></div>
+
+            <div class="preview-container">
+                <div class="preview-header">
+                    <span>Preview</span>
+                    <div class="preview-controls">
+                        <button class="resize-btn" data-size="small">Small</button>
+                        <button class="resize-btn" data-size="medium">Medium</button>
+                        <button class="resize-btn" data-size="large">Large</button>
+                        <button class="resize-btn active" data-size="full">Full</button>
+                    </div>
+                </div>
+                <iframe class="preview-frame" id="preview-frame"></iframe>
+            </div>
+        </div>
+
+        <div class="console-container" id="console-container">
+            <div class="console-header">
+                <span>Console</span>
+                <button class="toggle-btn" id="toggle-console">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            <div class="console-output" id="console-output"></div>
+        </div>
+    </div>
+
+    <!-- New File Modal -->
+List of 1 item
+    <div class="modal" id="new-file-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New File</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="new-filename">File Name:</label>
+                    <input type="text" id="new-filename" class="form-control" placeholder="Enter file name">
+                </div>
+                <div class="form-group">
+                    <label for="file-type">File Type:</label>
+                    <select id="file-type" class="form-control">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JavaScript</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="create-file">Create File</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Snippets Modal -->
+    <div class="modal" id="snippets-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Code Snippets</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="snippets-categories" id="snippets-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="HTML">HTML</button>
+                    <button class="category-btn" data-category="CSS">CSS</button>
+                    <button class="category-btn" data-category="JavaScript">JavaScript</button>
+                    <button class="category-btn" data-category="HTML/CSS">HTML/CSS</button>
+                </div>
+                <div class="snippets-list" id="snippets-list"></div>
+                <div class="snippet-preview" id="snippet-preview">
+                    <div class="snippet-info">
+                        <h4 id="snippet-title">Select a snippet</h4>
+                        <p id="snippet-description">Select a snippet to see its description and preview.</p>
+                    </div>
+                    <pre id="snippet-code"></pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="insert-snippet">Insert Snippet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Settings</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-item">
+                    <label for="font-size">Font Size:</label>
+                    <input type="range" id="font-size" min="10" max="24" value="14">
+                    <span id="font-size-value">14px</span>
+                </div>
+                <div class="setting-item">
+                    <label for="tab-size">Tab Size:</label>
+                    <input type="number" id="tab-size" min="1" max="8" value="2">
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="line-numbers" checked>
+                        Show Line Numbers
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="auto-run" checked>
+                        Auto-run on Code Change
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" id="save-settings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <input type="file" id="file-input" multiple style="display: none;">
+</body>
+</html>
